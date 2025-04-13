@@ -10,7 +10,7 @@ load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
-def load_prompts(yaml_file="prompts.yaml"):
+def load_prompts(yaml_file="code/prompts.yaml"):
     """
     YAML 파일에서 프롬프트를 로드하는 함수
 
