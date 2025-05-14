@@ -5,3 +5,8 @@
 openai
 python-dotenv
 PyYAML
+numpy
+nbformat
+streamlit
+pandas
+pillow
