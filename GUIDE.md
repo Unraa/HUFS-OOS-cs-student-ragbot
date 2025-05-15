@@ -167,3 +167,37 @@ OpenAI API 관련 오류가 발생하는 경우:
 
 - [FastAPI 공식 문서](https://fastapi.tiangolo.com/)
 - [RAG(Retrieval-Augmented Generation) 관련 자료](https://www.pinecone.io/learn/retrieval-augmented-generation/)
+
+## 벡터 데이터베이스 사용 안내
+
+### ChromaDB와 FAISS 벡터 검색
+
+최근 업데이트에서 프로젝트는 JSON 파일 기반 벡터 스토어에서 ChromaDB와 FAISS를 사용한 벡터 데이터베이스 시스템으로 전환되었습니다. 이로써 검색 성능이 향상되고, 대규모 데이터 처리가 가능해졌습니다.
+
+#### 설치 및 실행
+
+ChromaDB와 FAISS를 사용하기 위해 필요한 패키지는 `requirements.txt`에 포함되어 있습니다:
+
+```bash
+pip install -r requirements.txt
+```
+
+#### 데이터 저장 위치
+
+ChromaDB는 데이터를 `data/chroma_db` 디렉토리에 저장합니다. 이 디렉토리는 자동으로 생성되며, 벡터 데이터와 메타데이터를 저장합니다.
+
+#### 문서 업데이트 방법
+
+새로운 문서를 추가하거나 기존 문서를 업데이트하려면 `data/docs` 디렉토리에 마크다운(.md) 파일을 추가하거나 수정한 후, 다음 명령어를 실행하세요:
+
+```python
+# Python 인터프리터에서
+from app.services.rag import update_vector_store
+update_vector_store()
+
+# 또는 FastAPI 인터페이스의 '/update-vector-store' 엔드포인트를 사용할 수 있습니다.
+```
+
+#### 레거시 코드
+
+기존 JSON 기반 벡터 스토어 코드는 `legacy` 폴더에 보관되어 있습니다. 새로운 개발에는 ChromaDB 기반 코드를 사용하는 것을 권장합니다.

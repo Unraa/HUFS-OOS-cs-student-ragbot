@@ -13,6 +13,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.api.routes import router as api_router
+from app.services.embeddings import get_or_create_collection
 
 # FastAPI 앱 생성
 app = FastAPI(
@@ -37,6 +38,16 @@ app.include_router(api_router)
 
 # 정적 파일 마운트
 app.mount("/client", StaticFiles(directory="client_web"), name="client")
+
+
+# ChromaDB 초기화 - 시작 시 ChromaDB 컬렉션이 있는지 확인
+@app.on_event("startup")
+async def startup_db_client():
+    try:
+        collection = get_or_create_collection()
+        print(f"ChromaDB 초기화 완료: {collection.count()}개의 청크가 로드되었습니다.")
+    except Exception as e:
+        print(f"ChromaDB 초기화 중 오류 발생: {str(e)}")
 
 
 # 루트 경로에 대한 리다이렉션
@@ -64,6 +75,12 @@ async def root():
                 border-radius: 5px;
                 margin: 20px 0;
             }
+            .tech-info {
+                background-color: #e8f5e9;
+                padding: 20px;
+                border-radius: 5px;
+                margin: 20px 0;
+            }
             a {
                 display: inline-block;
                 margin: 10px 0;
@@ -86,11 +103,21 @@ async def root():
             <h2>사용 가능한 엔드포인트:</h2>
             <a href="/docs">API 문서 (Swagger UI)</a>
             <a href="/redoc">API 문서 (ReDoc)</a>
-            <a href="/streamlit">Streamlit 웹 인터페이스</a>
             <a href="/chat">ChatGPT 스타일 웹 인터페이스</a>
+            <a href="/api/update-vector-store">벡터 저장소 업데이트</a>
         </div>
         
         <p>자세한 정보는 API 문서를 참조하세요.</p>
+        
+        <div class="tech-info">
+            <h2>기술 정보:</h2>
+            <ul>
+                <li>벡터 데이터베이스: ChromaDB</li>
+                <li>벡터 인덱싱: FAISS (HNSW)</li>
+                <li>임베딩 모델: OpenAI Text Embedding</li>
+                <li>생성형 AI: OpenAI GPT 모델</li>
+            </ul>
+        </div>
     </body>
     </html>
     """
@@ -100,14 +127,6 @@ async def root():
 @app.get("/chat", response_class=HTMLResponse)
 async def chat_interface():
     return RedirectResponse(url="/client/index.html")
-
-
-# Streamlit 앱 리다이렉션
-@app.get("/streamlit")
-async def streamlit_redirect():
-    # 실제 배포 시에는 Streamlit 앱이 실행되는 URL로 변경
-    streamlit_url = "http://localhost:8503"
-    return RedirectResponse(url=streamlit_url)
 
 
 if __name__ == "__main__":
