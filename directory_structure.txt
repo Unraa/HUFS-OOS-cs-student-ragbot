@@ -24,6 +24,24 @@ HUFS-OOS-cs-student-ragbot/
 │   └── python_web/                     # 웹 인터페이스
 │       └── __init__.py
 │
+├── evaluate/                           # RAG 시스템 성능 평가 모듈
+│   ├── __init__.py                     # 패키지 초기화
+│   ├── evaluate.py                     # 종합 평가 실행 모듈
+│   ├── top_k_accuracy.py               # Top-k 문서 정확도 평가
+│   ├── response_quality.py             # GPT 응답 품질 평가 (ROUGE, BLEU 등)
+│   ├── reranker.py                     # Reranker 구현 및 성능 평가
+│   ├── improved_rag.py                 # Reranker를 적용한 개선된 RAG 시스템
+│   ├── test_dataset.py                 # 테스트 데이터셋 생성 및 관리
+│   ├── test_dataset.json               # 테스트 질의 및 정답 데이터
+│   ├── evaluation_report.md            # 평가 결과 종합 보고서
+│   ├── README.md                       # 평가 모듈 설명
+│   ├── doc_id_matching_details.json    # 문서 ID 매핑 상세 정보
+│   └── evaluation_results/             # 평가 결과 저장 디렉토리
+│       ├── top_k_accuracy.json         # Top-k 정확도 평가 결과
+│       ├── reranker_improvement.json   # Reranker 성능 평가 결과
+│       ├── rag_comparison.json         # RAG 시스템 비교 결과
+│       └── evaluation_summary.json     # 전체 평가 요약
+│
 ├── client_web/                         # 클라이언트 웹 코드
 │   ├── env/                            # 클라이언트 웹 가상환경
 │   └── index.html                      # 챗봇 웹 인터페이스

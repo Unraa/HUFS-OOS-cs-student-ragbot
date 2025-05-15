@@ -26,3 +26,9 @@ faiss-cpu
 # 추가 유틸리티
 python-multipart
 httpx
+
+# 평가 모듈 관련 패키지
+rouge
+nltk
+transformers
+torch
