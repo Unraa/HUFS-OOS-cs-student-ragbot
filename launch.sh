@@ -15,7 +15,7 @@ echo -e "${BLUE}=========================================${NC}"
 
 # Streamlit과 FastAPI를 백그라운드에서 실행
 echo -e "${YELLOW}Streamlit 앱 시작 중...${NC}"
-streamlit run app/web/streamlit_app.py --server.port=8503 &
+streamlit run app/python_web/streamlit_app.py --server.port=8503 &
 STREAMLIT_PID=$!
 
 # 잠시 대기

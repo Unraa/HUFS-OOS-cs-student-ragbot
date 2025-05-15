@@ -21,7 +21,7 @@ HUFS-OOS-cs-student-ragbot/
 │   │   ├── markdown_processor.py       # 마크다운 문서 처리
 │   │   └── rag.py                      # RAG 구현
 │   │
-│   └── web/                            # 웹 인터페이스
+│   └── python_web/                            # 웹 인터페이스
 │       ├── __init__.py
 │       └── streamlit_app.py            # Streamlit 앱
 │
