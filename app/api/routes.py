@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends, HTTPException, Body
 from typing import Dict, List, Optional
 from pydantic import BaseModel
 
-from app.services.embeddings import load_vector_store
-from app.services.rag import generate_rag_response, load_prompts
+from app.services.rag import generate_rag_response, load_prompts, update_vector_store
+from app.services.embeddings import get_or_create_collection
 import logging
 
 # 라우터 정의
@@ -25,19 +25,22 @@ class QueryResponse(BaseModel):
     source_chunks: Optional[List[Dict]] = None
 
 
-# 벡터 스토어 로드 함수
-def get_vector_store():
-    vector_store = load_vector_store()
-    if not vector_store:
-        raise HTTPException(status_code=500, detail="벡터 저장소를 로드할 수 없습니다.")
-    return vector_store
+# ChromaDB 컬렉션 확인 함수
+def check_chromadb():
+    collection = get_or_create_collection()
+    if collection.count() == 0:
+        raise HTTPException(
+            status_code=500,
+            detail="ChromaDB 컬렉션이 비어있습니다. 데이터를 추가해주세요.",
+        )
+    return collection
 
 
 # RAG 쿼리 엔드포인트
 @router.post("/query", response_model=QueryResponse)
 async def query_rag(
     request: QueryRequest,
-    vector_store: List[Dict] = Depends(get_vector_store),
+    collection: any = Depends(check_chromadb),
 ):
     """
     사용자 쿼리에 대한 RAG 응답을 생성합니다.
@@ -45,7 +48,6 @@ async def query_rag(
     try:
         answer = generate_rag_response(
             query=request.text,
-            vector_store=vector_store,
             system_key=request.system_key,
         )
 
@@ -75,15 +77,38 @@ async def chat(message: dict = Body(...)):
         if not query:
             raise HTTPException(status_code=400, detail="메시지 내용이 없습니다")
 
-        # 벡터 저장소 로드
-        vector_store = load_vector_store()
-        if not vector_store:
-            raise HTTPException(status_code=500, detail="벡터 저장소 로드 실패")
+        # ChromaDB 확인
+        collection = get_or_create_collection()
+        if collection.count() == 0:
+            raise HTTPException(
+                status_code=500, detail="ChromaDB 컬렉션이 비어있습니다"
+            )
 
         # RAG 응답 생성
-        response = generate_rag_response(query, vector_store)
+        response = generate_rag_response(query)
 
         return {"response": response}
     except Exception as e:
         logging.error(f"채팅 처리 중 오류 발생: {str(e)}")
         raise HTTPException(status_code=500, detail=f"응답 생성 중 오류 발생: {str(e)}")
+
+
+@router.post("/update-vector-store")
+async def update_vector_store_endpoint():
+    """
+    벡터 저장소를 업데이트하는 엔드포인트
+    """
+    try:
+        success = update_vector_store()
+        if success:
+            return {
+                "status": "success",
+                "message": "벡터 저장소가 성공적으로 업데이트되었습니다.",
+            }
+        else:
+            raise HTTPException(status_code=500, detail="벡터 저장소 업데이트 실패")
+    except Exception as e:
+        logging.error(f"벡터 저장소 업데이트 중 오류 발생: {str(e)}")
+        raise HTTPException(
+            status_code=500, detail=f"벡터 저장소 업데이트 중 오류 발생: {str(e)}"
+        )
