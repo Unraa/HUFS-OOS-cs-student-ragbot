@@ -1,0 +1,407 @@
+[
+  {
+    "query": "컴퓨터공학과 졸업요건은 어떻게 되나요?",
+    "answer": "컴퓨터공학과 졸업요건은 총 130학점 이상 이수, 전공 66학점 이상(필수 39학점, 선택 27학점), 교양 33학점 이상, 평균평점 1.75 이상입니다.",
+    "original_ids": [
+      "chunk_1",
+      "chunk_2"
+    ],
+    "found_ids": [
+      "chunk_53",
+      "chunk_47",
+      "chunk_69"
+    ],
+    "query_search_results": [
+      {
+        "id": "chunk_53",
+        "title": "졸업 후 진로"
+      },
+      {
+        "id": "chunk_47",
+        "title": "졸업에 필요한 서류들은 어디에 제출하나요?"
+      },
+      {
+        "id": "chunk_69",
+        "title": "졸업요건"
+      }
+    ],
+    "answer_search_results": [
+      {
+        "id": "chunk_69",
+        "title": "졸업요건"
+      },
+      {
+        "id": "chunk_59",
+        "title": "졸업 이수학점 및 졸업요건 안내 (2025-1학기 기준)"
+      },
+      {
+        "id": "chunk_71",
+        "title": "편입생 유의사항"
+      }
+    ]
+  },
+  {
+    "query": "전공필수 과목은 무엇인가요?",
+    "answer": "전공필수 과목은 컴퓨터공학개론, 프로그래밍언어, 자료구조론, 알고리즘, 운영체제, 컴퓨터구조, 컴퓨터네트워크, 기초프로그래밍, 객체지향프로그래밍, 논리회로, 데이터베이스 등이 있습니다.",
+    "original_ids": [
+      "chunk_3"
+    ],
+    "found_ids": [
+      "chunk_64",
+      "chunk_45",
+      "chunk_60"
+    ],
+    "query_search_results": [
+      {
+        "id": "chunk_64",
+        "title": "이수체계도"
+      },
+      {
+        "id": "chunk_45",
+        "title": "이중전공과 부전공의 차이는 무엇인가요?"
+      },
+      {
+        "id": "chunk_60",
+        "title": "교과영역 및 교과목 안내"
+      }
+    ],
+    "answer_search_results": [
+      {
+        "id": "chunk_64",
+        "title": "이수체계도"
+      },
+      {
+        "id": "chunk_66",
+        "title": "전공교과목"
+      },
+      {
+        "id": "chunk_1",
+        "title": "대학원 교과목목"
+      }
+    ]
+  },
+  {
+    "query": "컴공 학생회실은 어디에 있나요?",
+    "answer": "컴퓨터공학과 학생회실은 공학관 321호에 위치해 있습니다.",
+    "original_ids": [
+      "chunk_4",
+      "chunk_5"
+    ],
+    "found_ids": [
+      "chunk_54",
+      "chunk_7",
+      "chunk_26"
+    ],
+    "query_search_results": [
+      {
+        "id": "chunk_54",
+        "title": "오시는 길"
+      },
+      {
+        "id": "chunk_7",
+        "title": "2025-1학기 실험실습조교 모집 (~2/24)"
+      },
+      {
+        "id": "chunk_26",
+        "title": "신입생대상 코딩존 운영"
+      }
+    ],
+    "answer_search_results": [
+      {
+        "id": "chunk_26",
+        "title": "신입생대상 코딩존 운영"
+      },
+      {
+        "id": "chunk_54",
+        "title": "오시는 길"
+      },
+      {
+        "id": "chunk_19",
+        "title": "컴퓨터공학부 세미나실 예약 시스템(306호, 428호) 회원 등록"
+      }
+    ]
+  },
+  {
+    "query": "코딩 동아리는 어떤 것이 있나요?",
+    "answer": "컴퓨터공학과 관련 동아리로는 웹 개발 동아리 '웹마스터', 게임 개발 동아리 'HUFS Game', 보안 동아리 'HUFS Security' 등이 있습니다.",
+    "original_ids": [
+      "chunk_6"
+    ],
+    "found_ids": [
+      "chunk_26",
+      "chunk_54",
+      "chunk_34"
+    ],
+    "query_search_results": [
+      {
+        "id": "chunk_26",
+        "title": "신입생대상 코딩존 운영"
+      },
+      {
+        "id": "chunk_54",
+        "title": "오시는 길"
+      },
+      {
+        "id": "chunk_34",
+        "title": "2025 ACPC (AWS x Codetree) 전국 대학생 프로그래밍 경진대회"
+      }
+    ],
+    "answer_search_results": [
+      {
+        "id": "chunk_75",
+        "title": "학부활동"
+      },
+      {
+        "id": "chunk_66",
+        "title": "전공교과목"
+      },
+      {
+        "id": "chunk_0",
+        "title": "대학원 학과소개"
+      }
+    ]
+  },
+  {
+    "query": "교환학생 신청은 어떻게 하나요?",
+    "answer": "교환학생 신청은 국제교류팀을 통해 가능하며, 매 학기 시작 2-3개월 전에 공지가 나옵니다. 성적, 어학성적, 자기소개서 등을 준비해야 하며 학과 사무실을 통해 상담이 가능합니다.",
+    "original_ids": [
+      "chunk_7",
+      "chunk_8"
+    ],
+    "found_ids": [
+      "chunk_11",
+      "chunk_40",
+      "chunk_8"
+    ],
+    "query_search_results": [
+      {
+        "id": "chunk_11",
+        "title": "정보산업연구소 조교 모집"
+      },
+      {
+        "id": "chunk_40",
+        "title": "장학생은 어떻게 선발하나요?"
+      },
+      {
+        "id": "chunk_8",
+        "title": "2025-1학기 공로장학생 모집 (~2/24)"
+      }
+    ],
+    "answer_search_results": [
+      {
+        "id": "chunk_38",
+        "title": "컴퓨터공학부 국외교류학점인정 내규 - 2020.6.8"
+      },
+      {
+        "id": "chunk_46",
+        "title": "공지사항에 실험실습조교는 무엇인가요?"
+      },
+      {
+        "id": "chunk_8",
+        "title": "2025-1학기 공로장학생 모집 (~2/24)"
+      }
+    ]
+  },
+  {
+    "query": "교수님 연구실 위치가 어디인가요?",
+    "answer": "교수님 연구실은 공학관 3층과 4층에 위치해 있으며, 각 교수님별 연구실 호수는 학과 홈페이지에서 확인할 수 있습니다.",
+    "original_ids": [
+      "chunk_9"
+    ],
+    "found_ids": [
+      "chunk_46",
+      "chunk_11",
+      "chunk_16"
+    ],
+    "query_search_results": [
+      {
+        "id": "chunk_46",
+        "title": "공지사항에 실험실습조교는 무엇인가요?"
+      },
+      {
+        "id": "chunk_11",
+        "title": "정보산업연구소 조교 모집"
+      },
+      {
+        "id": "chunk_16",
+        "title": "2025-1 실험실습조교 배정결과 (2월 27일 기준)"
+      }
+    ],
+    "answer_search_results": [
+      {
+        "id": "chunk_13",
+        "title": "실험실습조교 신청 (기한연장 3월 3일까지)"
+      },
+      {
+        "id": "chunk_16",
+        "title": "2025-1 실험실습조교 배정결과 (2월 27일 기준)"
+      },
+      {
+        "id": "chunk_7",
+        "title": "2025-1학기 실험실습조교 모집 (~2/24)"
+      }
+    ]
+  },
+  {
+    "query": "장학금 신청은 어떻게 하나요?",
+    "answer": "장학금 신청은 학교 포털사이트를 통해 신청 기간에 온라인으로 신청하며, 성적장학금, 근로장학금, 외국어장학금 등 다양한 종류가 있습니다.",
+    "original_ids": [
+      "chunk_10",
+      "chunk_11"
+    ],
+    "found_ids": [
+      "chunk_40",
+      "chunk_73",
+      "chunk_35"
+    ],
+    "query_search_results": [
+      {
+        "id": "chunk_40",
+        "title": "장학생은 어떻게 선발하나요?"
+      },
+      {
+        "id": "chunk_73",
+        "title": "장학정보"
+      },
+      {
+        "id": "chunk_35",
+        "title": "2025학년도 1학기 HUFS Dream 장학생 신청자 모집"
+      }
+    ],
+    "answer_search_results": [
+      {
+        "id": "chunk_73",
+        "title": "장학정보"
+      },
+      {
+        "id": "chunk_40",
+        "title": "장학생은 어떻게 선발하나요?"
+      },
+      {
+        "id": "chunk_35",
+        "title": "2025학년도 1학기 HUFS Dream 장학생 신청자 모집"
+      }
+    ]
+  },
+  {
+    "query": "수강신청 기간은 언제인가요?",
+    "answer": "수강신청 기간은 매 학기 시작 약 2주 전에 진행되며, 정확한 일정은 학사 일정을 참고하시기 바랍니다.",
+    "original_ids": [
+      "chunk_12"
+    ],
+    "found_ids": [
+      "chunk_58",
+      "chunk_36",
+      "chunk_6"
+    ],
+    "query_search_results": [
+      {
+        "id": "chunk_58",
+        "title": "수강신청 일정 및 지침"
+      },
+      {
+        "id": "chunk_36",
+        "title": "이수구분 변경신청서"
+      },
+      {
+        "id": "chunk_6",
+        "title": "2025-1학기 컴퓨터공학부 수강신청 안내"
+      }
+    ],
+    "answer_search_results": [
+      {
+        "id": "chunk_58",
+        "title": "수강신청 일정 및 지침"
+      },
+      {
+        "id": "chunk_9",
+        "title": "2025학년도 편입생 수강신청 안내"
+      },
+      {
+        "id": "chunk_10",
+        "title": "2025학년도 신입생 수강신청 안내"
+      }
+    ]
+  },
+  {
+    "query": "컴퓨터공학과 학과장은 누구인가요?",
+    "answer": "현재 컴퓨터공학과 학과장은 홍길동 교수님이십니다. (가상 데이터)",
+    "original_ids": [
+      "chunk_13"
+    ],
+    "found_ids": [
+      "chunk_0",
+      "chunk_26",
+      "chunk_54"
+    ],
+    "query_search_results": [
+      {
+        "id": "chunk_0",
+        "title": "대학원 학과소개"
+      },
+      {
+        "id": "chunk_26",
+        "title": "신입생대상 코딩존 운영"
+      },
+      {
+        "id": "chunk_54",
+        "title": "오시는 길"
+      }
+    ],
+    "answer_search_results": [
+      {
+        "id": "chunk_55",
+        "title": "교수진"
+      },
+      {
+        "id": "chunk_54",
+        "title": "오시는 길"
+      },
+      {
+        "id": "chunk_0",
+        "title": "대학원 학과소개"
+      }
+    ]
+  },
+  {
+    "query": "졸업 프로젝트는 어떻게 진행되나요?",
+    "answer": "졸업 프로젝트는 4학년 1학기에 졸업프로젝트1, 2학기에 졸업프로젝트2를 수강하며, 지도교수님 지도하에 4-5명이 팀을 이루어 프로젝트를 진행합니다.",
+    "original_ids": [
+      "chunk_14",
+      "chunk_15"
+    ],
+    "found_ids": [
+      "chunk_47",
+      "chunk_69",
+      "chunk_27"
+    ],
+    "query_search_results": [
+      {
+        "id": "chunk_47",
+        "title": "졸업에 필요한 서류들은 어디에 제출하나요?"
+      },
+      {
+        "id": "chunk_69",
+        "title": "졸업요건"
+      },
+      {
+        "id": "chunk_27",
+        "title": "2025년 1학기 졸업논문 제출 일정"
+      }
+    ],
+    "answer_search_results": [
+      {
+        "id": "chunk_65",
+        "title": "학부교과목"
+      },
+      {
+        "id": "chunk_69",
+        "title": "졸업요건"
+      },
+      {
+        "id": "chunk_74",
+        "title": "학석사 연계과정"
+      }
+    ]
+  }
+]
