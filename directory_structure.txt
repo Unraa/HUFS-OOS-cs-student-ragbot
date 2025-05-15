@@ -25,6 +25,13 @@ HUFS-OOS-cs-student-ragbot/
 │       ├── __init__.py
 │       └── streamlit_app.py            # Streamlit 앱
 │
+├── client_web/                         # 클라이언트 웹 코드
+│   ├── static/                         # 정적 파일
+│   │   ├── css/                        # CSS 스타일시트
+│   │   ├── js/                         # JavaScript 파일
+│   │   └── images/                     # 이미지 파일
+│   └── templates/                      # HTML 템플릿
+│
 ├── legacy/                             # 레거시 코드
 │   ├── baseline_test.py                # 기존 테스트 코드
 │   ├── baseline.py                     # 기존 기준 코드
@@ -38,14 +45,13 @@ HUFS-OOS-cs-student-ragbot/
 │   └── web_ui.py                       # 기존 웹 인터페이스
 │
 ├── data/                               # 데이터 파일
-│   └── vector_store.json               # 벡터 저장소
-│
-├── docs/                               # 문서 디렉토리
-│   ├── raw/                            # 원본 문서 디렉토리
-│   │   ├── 대학원+공지사항+취업정보+자료실+FAQ.md
-│   │   ├── 학부안내+구성원.md
-│   │   └── 라운_수업안내_학사안내_정리.markdown
-│   └── combined_markdown.md            # 결합된 마크다운 파일
+│   ├── vector_store.json               # 벡터 저장소
+│   └── docs/                           # 문서 디렉토리
+│       ├── raw/                        # 원본 문서 디렉토리
+│       │   ├── 대학원+공지사항+취업정보+자료실+FAQ.md
+│       │   ├── 학부안내+구성원.md
+│       │   └── 라운_수업안내_학사안내_정리.markdown
+│       └── combined_markdown.md        # 결합된 마크다운 파일
 │
 ├── study_docs/                         # 스터디 문서 디렉토리
 │   ├── 건우_개발진행현황_정리.ipynb
