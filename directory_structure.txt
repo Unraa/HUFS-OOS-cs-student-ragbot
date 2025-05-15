@@ -21,16 +21,13 @@ HUFS-OOS-cs-student-ragbot/
 │   │   ├── markdown_processor.py       # 마크다운 문서 처리
 │   │   └── rag.py                      # RAG 구현
 │   │
-│   └── python_web/                            # 웹 인터페이스
+│   └── python_web/                     # 웹 인터페이스
 │       ├── __init__.py
 │       └── streamlit_app.py            # Streamlit 앱
 │
 ├── client_web/                         # 클라이언트 웹 코드
-│   ├── static/                         # 정적 파일
-│   │   ├── css/                        # CSS 스타일시트
-│   │   ├── js/                         # JavaScript 파일
-│   │   └── images/                     # 이미지 파일
-│   └── templates/                      # HTML 템플릿
+│   ├── env/                            # 클라이언트 웹 가상환경
+│   └── index.html                      # 챗봇 웹 인터페이스
 │
 ├── legacy/                             # 레거시 코드
 │   ├── baseline_test.py                # 기존 테스트 코드
