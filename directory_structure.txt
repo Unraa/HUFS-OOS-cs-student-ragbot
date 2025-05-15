@@ -17,13 +17,12 @@ HUFS-OOS-cs-student-ragbot/
 │   │
 │   ├── services/                       # 비즈니스 로직
 │   │   ├── __init__.py
-│   │   ├── embeddings.py               # 임베딩 생성 및 처리 
+│   │   ├── embeddings.py               # 임베딩 생성 및 처리 (ChromaDB+FAISS)
 │   │   ├── markdown_processor.py       # 마크다운 문서 처리
 │   │   └── rag.py                      # RAG 구현
 │   │
 │   └── python_web/                     # 웹 인터페이스
-│       ├── __init__.py
-│       └── streamlit_app.py            # Streamlit 앱
+│       └── __init__.py
 │
 ├── client_web/                         # 클라이언트 웹 코드
 │   ├── env/                            # 클라이언트 웹 가상환경
@@ -34,15 +33,20 @@ HUFS-OOS-cs-student-ragbot/
 │   ├── baseline.py                     # 기존 기준 코드
 │   ├── embeddings_generator.py         # 기존 임베딩 생성기
 │   ├── markdown_processor.py           # 기존 마크다운 처리 유틸리티
+│   ├── migrate_to_chromadb.py          # 기존 마이그레이션 스크립트
 │   ├── prompts.yaml                    # 기존 프롬프트 템플릿
 │   ├── rag_chatbot.py                  # 기존 RAG 챗봇 구현
 │   ├── README.md                       # 코드 디렉토리 설명
 │   ├── run_pipeline.py                 # 기존 파이프라인 실행 코드
 │   ├── utils.py                        # 기존 유틸리티 함수
-│   └── web_ui.py                       # 기존 웹 인터페이스
+│   ├── web_ui.py                       # 기존 웹 인터페이스
+│   └── services/                       # 레거시 서비스 코드
+│       ├── embeddings.py               # 벡터 스토어 기반 임베딩 서비스
+│       └── rag.py                      # 벡터 스토어 기반 RAG 서비스
 │
 ├── data/                               # 데이터 파일
-│   ├── vector_store.json               # 벡터 저장소
+│   ├── vector_store.json               # 레거시 벡터 저장소 (JSON)
+│   ├── chroma_db/                      # ChromaDB 벡터 데이터베이스
 │   └── docs/                           # 문서 디렉토리
 │       ├── raw/                        # 원본 문서 디렉토리
 │       │   ├── 대학원+공지사항+취업정보+자료실+FAQ.md
@@ -57,6 +61,7 @@ HUFS-OOS-cs-student-ragbot/
 │   └── 현빈_개발진행을_위한_기본개념정리.ipynb
 │
 ├── directory_structure.txt             # 디렉토리 구조 설명 파일
+├── GUIDE.md                            # 사용자 가이드 문서
 ├── requirements.txt                    # Python 의존성 파일
 ├── .gitignore                          # Git 무시 파일 목록
 ├── LICENSE                             # 라이선스 파일
