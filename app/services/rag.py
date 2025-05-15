@@ -68,7 +68,7 @@ def update_vector_store(documents_dir=None):
 
     try:
         # 마크다운 문서 처리
-        chunks = process_markdown_documents(documents_dir)
+        _, chunks = process_markdown_documents(documents_dir)
 
         if not chunks:
             print("처리할 문서가 없습니다.")

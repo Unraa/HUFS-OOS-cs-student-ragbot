@@ -104,7 +104,7 @@ async def root():
             <a href="/docs">API 문서 (Swagger UI)</a>
             <a href="/redoc">API 문서 (ReDoc)</a>
             <a href="/chat">ChatGPT 스타일 웹 인터페이스</a>
-            <a href="/api/update-vector-store">벡터 저장소 업데이트</a>
+            <a href="/api/update-vector-store">벡터 저장소 업데이트 (클릭하면 바로 실행)</a>
         </div>
         
         <p>자세한 정보는 API 문서를 참조하세요.</p>

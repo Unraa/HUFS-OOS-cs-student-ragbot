@@ -94,9 +94,11 @@ async def chat(message: dict = Body(...)):
 
 
 @router.post("/update-vector-store")
+@router.get("/update-vector-store")
 async def update_vector_store_endpoint():
     """
     벡터 저장소를 업데이트하는 엔드포인트
+    GET 또는 POST 요청을 통해 호출 가능합니다.
     """
     try:
         success = update_vector_store()

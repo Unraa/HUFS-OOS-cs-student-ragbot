@@ -119,7 +119,17 @@ def generate_embeddings_for_chunks(chunks: List[Dict[str, str]]) -> List[Dict]:
     collection = get_or_create_collection()
 
     # 기존 데이터 모두 제거 (새로 생성)
-    collection.delete(where={})
+    try:
+        # 기존 모든 문서의 ID를 가져옵니다
+        if collection.count() > 0:
+            all_ids = collection.get()["ids"]
+            # 모든 ID를 사용하여 데이터 삭제
+            if all_ids:
+                collection.delete(ids=all_ids)
+            print(f"{len(all_ids)}개의 기존 문서가 삭제되었습니다.")
+    except Exception as e:
+        print(f"기존 데이터 삭제 중 오류 발생: {str(e)}")
+        # 오류가 발생해도 계속 진행
 
     ids = []
     documents = []
