@@ -1,16 +1,11 @@
 import os
-import numpy as np
-from typing import List, Dict, Tuple
-from dotenv import load_dotenv
-from openai import OpenAI
 import yaml
-from embeddings_generator import load_vector_store, generate_embedding
-
-# .env 파일에서 환경 변수 로드
-load_dotenv()
-
-# OpenAI 클라이언트 초기화
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+from typing import List, Dict
+from utils import get_openai_client
+from embeddings_generator import (
+    load_vector_store,
+    find_similar_chunks,
+)
 
 
 def load_prompts(yaml_file="code/prompts.yaml"):
@@ -25,60 +20,6 @@ def load_prompts(yaml_file="code/prompts.yaml"):
     """
     with open(yaml_file, "r", encoding="utf-8") as file:
         return yaml.safe_load(file)
-
-
-def cosine_similarity(vec1: List[float], vec2: List[float]) -> float:
-    """
-    두 벡터 간의 코사인 유사도를 계산합니다.
-
-    Args:
-        vec1 (List[float]): 첫 번째 벡터
-        vec2 (List[float]): 두 번째 벡터
-
-    Returns:
-        float: 코사인 유사도 (-1에서 1 사이의 값)
-    """
-    # NumPy 배열로 변환
-    np_vec1 = np.array(vec1)
-    np_vec2 = np.array(vec2)
-
-    # 코사인 유사도 계산
-    return np.dot(np_vec1, np_vec2) / (
-        np.linalg.norm(np_vec1) * np.linalg.norm(np_vec2)
-    )
-
-
-def find_similar_chunks(
-    query: str, vector_store: List[Dict], top_k: int = 3
-) -> List[Dict]:
-    """
-    사용자 쿼리에 가장 유사한 청크를 찾습니다.
-
-    Args:
-        query (str): 사용자 쿼리
-        vector_store (List[Dict]): 벡터 저장소
-        top_k (int, optional): 반환할 최상위 유사 청크 수. 기본값은 3.
-
-    Returns:
-        List[Dict]: 상위 k개의 유사한 청크 목록
-    """
-    # 쿼리에 대한 임베딩 생성
-    query_embedding = generate_embedding(query)
-
-    # 각 청크와의 유사도 계산
-    chunk_similarities = []
-    for chunk in vector_store:
-        chunk_embedding = chunk["embedding"]
-        similarity = cosine_similarity(query_embedding, chunk_embedding)
-        chunk_similarities.append((chunk, similarity))
-
-    # 유사도에 따라 내림차순 정렬
-    sorted_chunks = sorted(chunk_similarities, key=lambda x: x[1], reverse=True)
-
-    # 상위 k개 청크 반환
-    top_chunks = [chunk for chunk, _ in sorted_chunks[:top_k]]
-
-    return top_chunks
 
 
 def format_context_from_chunks(chunks: List[Dict]) -> str:
@@ -132,6 +73,7 @@ def generate_rag_response(
         prompts = load_prompts()
 
         # 4. LLM으로 응답 생성
+        client = get_openai_client()
         response = client.chat.completions.create(
             model="gpt-4o",
             messages=[

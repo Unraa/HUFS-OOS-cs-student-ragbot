@@ -1,12 +1,9 @@
 import streamlit as st
 import os
 import time
-from dotenv import load_dotenv
+from utils import get_openai_client
 from embeddings_generator import load_vector_store
 from rag_chatbot import generate_rag_response, load_prompts
-
-# .env 파일에서 환경 변수 로드
-load_dotenv()
 
 # 페이지 설정
 st.set_page_config(

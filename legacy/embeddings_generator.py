@@ -5,6 +5,7 @@ import json
 from dotenv import load_dotenv
 from openai import OpenAI
 from markdown_processor import process_markdown_documents
+from utils import get_openai_client
 
 # .env 파일에서 환경 변수 로드
 load_dotenv()
@@ -24,6 +25,7 @@ def generate_embedding(text: str) -> List[float]:
         List[float]: 임베딩 벡터
     """
     try:
+        client = get_openai_client()
         response = client.embeddings.create(model="text-embedding-3-small", input=text)
         # 응답에서 임베딩 벡터 추출
         embedding = response.data[0].embedding
@@ -31,6 +33,60 @@ def generate_embedding(text: str) -> List[float]:
     except Exception as e:
         print(f"임베딩 생성 중 오류 발생: {str(e)}")
         return []
+
+
+def cosine_similarity(vec1: List[float], vec2: List[float]) -> float:
+    """
+    두 벡터 간의 코사인 유사도를 계산합니다.
+
+    Args:
+        vec1 (List[float]): 첫 번째 벡터
+        vec2 (List[float]): 두 번째 벡터
+
+    Returns:
+        float: 코사인 유사도 (-1에서 1 사이의 값)
+    """
+    # NumPy 배열로 변환
+    np_vec1 = np.array(vec1)
+    np_vec2 = np.array(vec2)
+
+    # 코사인 유사도 계산
+    return np.dot(np_vec1, np_vec2) / (
+        np.linalg.norm(np_vec1) * np.linalg.norm(np_vec2)
+    )
+
+
+def find_similar_chunks(
+    query: str, vector_store: List[Dict], top_k: int = 3
+) -> List[Dict]:
+    """
+    사용자 쿼리에 가장 유사한 청크를 찾습니다.
+
+    Args:
+        query (str): 사용자 쿼리
+        vector_store (List[Dict]): 벡터 저장소
+        top_k (int, optional): 반환할 최상위 유사 청크 수. 기본값은 3.
+
+    Returns:
+        List[Dict]: 상위 k개의 유사한 청크 목록
+    """
+    # 쿼리에 대한 임베딩 생성
+    query_embedding = generate_embedding(query)
+
+    # 각 청크와의 유사도 계산
+    chunk_similarities = []
+    for chunk in vector_store:
+        chunk_embedding = chunk["embedding"]
+        similarity = cosine_similarity(query_embedding, chunk_embedding)
+        chunk_similarities.append((chunk, similarity))
+
+    # 유사도에 따라 내림차순 정렬
+    sorted_chunks = sorted(chunk_similarities, key=lambda x: x[1], reverse=True)
+
+    # 상위 k개 청크 반환
+    top_chunks = [chunk for chunk, _ in sorted_chunks[:top_k]]
+
+    return top_chunks
 
 
 def generate_embeddings_for_chunks(chunks: List[Dict[str, str]]) -> List[Dict]:

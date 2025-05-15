@@ -1,0 +1,61 @@
+HUFS-OOS-cs-student-ragbot/
+│
+├── main.py                             # FastAPI 애플리케이션 진입점
+├── launch.sh                           # 서비스 실행 스크립트
+│
+├── app/                                # 애플리케이션 코드
+│   ├── __init__.py                     # 패키지 초기화
+│   ├── api/                            # API 라우터
+│   │   ├── __init__.py
+│   │   └── routes.py                   # API 엔드포인트
+│   │
+│   ├── core/                           # 핵심 구성요소
+│   │   ├── __init__.py
+│   │   ├── config.py                   # 설정 관리
+│   │   ├── prompts.yaml                # 프롬프트 템플릿
+│   │   └── utils.py                    # 유틸리티 함수
+│   │
+│   ├── services/                       # 비즈니스 로직
+│   │   ├── __init__.py
+│   │   ├── embeddings.py               # 임베딩 생성 및 처리 
+│   │   ├── markdown_processor.py       # 마크다운 문서 처리
+│   │   └── rag.py                      # RAG 구현
+│   │
+│   └── web/                            # 웹 인터페이스
+│       ├── __init__.py
+│       └── streamlit_app.py            # Streamlit 앱
+│
+├── legacy/                             # 레거시 코드
+│   ├── baseline_test.py                # 기존 테스트 코드
+│   ├── baseline.py                     # 기존 기준 코드
+│   ├── embeddings_generator.py         # 기존 임베딩 생성기
+│   ├── markdown_processor.py           # 기존 마크다운 처리 유틸리티
+│   ├── prompts.yaml                    # 기존 프롬프트 템플릿
+│   ├── rag_chatbot.py                  # 기존 RAG 챗봇 구현
+│   ├── README.md                       # 코드 디렉토리 설명
+│   ├── run_pipeline.py                 # 기존 파이프라인 실행 코드
+│   ├── utils.py                        # 기존 유틸리티 함수
+│   └── web_ui.py                       # 기존 웹 인터페이스
+│
+├── data/                               # 데이터 파일
+│   └── vector_store.json               # 벡터 저장소
+│
+├── docs/                               # 문서 디렉토리
+│   ├── raw/                            # 원본 문서 디렉토리
+│   │   ├── 대학원+공지사항+취업정보+자료실+FAQ.md
+│   │   ├── 학부안내+구성원.md
+│   │   └── 라운_수업안내_학사안내_정리.markdown
+│   └── combined_markdown.md            # 결합된 마크다운 파일
+│
+├── study_docs/                         # 스터디 문서 디렉토리
+│   ├── 건우_개발진행현황_정리.ipynb
+│   ├── 라운_개발진행을_위한_기본개념정리.ipynb
+│   ├── 태희_개발진행을_위한_기본개념정리.ipynb
+│   └── 현빈_개발진행을_위한_기본개념정리.ipynb
+│
+├── directory_structure.txt             # 디렉토리 구조 설명 파일
+├── requirements.txt                    # Python 의존성 파일
+├── .gitignore                          # Git 무시 파일 목록
+├── LICENSE                             # 라이선스 파일
+└── README.md                           # 프로젝트 설명 파일
+
