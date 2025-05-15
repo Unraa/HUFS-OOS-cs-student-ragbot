@@ -22,6 +22,10 @@ class Settings(BaseSettings):
     DOCS_DIR: str = "data/docs"
     PROMPTS_FILE: str = "app/core/prompts.yaml"
 
+    # ChromaDB 설정
+    CHROMA_DB_DIR: str = "data/chroma_db"
+    CHROMA_COLLECTION_NAME: str = "hufs_cs_docs"
+
     # 모델 설정
     EMBEDDING_MODEL: str = "text-embedding-3-small"
     LLM_MODEL: str = "gpt-4o"

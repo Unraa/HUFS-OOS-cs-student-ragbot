@@ -19,6 +19,10 @@ pydantic
 pydantic-settings
 jinja2
 
+# 벡터 데이터베이스
+chromadb
+faiss-cpu
+
 # 추가 유틸리티
 python-multipart
 httpx

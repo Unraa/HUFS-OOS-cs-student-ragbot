@@ -4,8 +4,8 @@ from typing import List, Dict
 from app.core.utils import get_openai_client
 from app.core.config import settings
 from app.services.embeddings import (
-    load_vector_store,
     find_similar_chunks,
+    get_or_create_collection,
 )
 
 
@@ -48,31 +48,59 @@ def format_context_from_chunks(chunks: List[Dict]) -> str:
     return formatted_context
 
 
-def generate_rag_response(
-    query: str, vector_store: List[Dict] = None, system_key: str = "rag"
-) -> str:
+def update_vector_store(documents_dir=None):
+    """
+    마크다운 문서를 처리하고 ChromaDB 벡터 저장소를 업데이트합니다.
+
+    Args:
+        documents_dir (str, optional): 마크다운 문서 디렉토리
+
+    Returns:
+        bool: 업데이트 성공 여부
+    """
+    from app.services.markdown_processor import process_markdown_documents
+    from app.services.embeddings import generate_embeddings_for_chunks
+
+    if documents_dir is None:
+        documents_dir = settings.DOCS_DIR
+
+    print(f"마크다운 문서를 처리하고 벡터 저장소를 업데이트합니다...")
+
+    try:
+        # 마크다운 문서 처리
+        chunks = process_markdown_documents(documents_dir)
+
+        if not chunks:
+            print("처리할 문서가 없습니다.")
+            return False
+
+        print(f"{len(chunks)}개의 청크로 분할되었습니다. 임베딩 생성 중...")
+
+        # 임베딩 생성 및 ChromaDB에 저장
+        generate_embeddings_for_chunks(chunks)
+
+        print(f"벡터 저장소 업데이트가 완료되었습니다.")
+        return True
+
+    except Exception as e:
+        print(f"벡터 저장소 업데이트 중 오류 발생: {str(e)}")
+        return False
+
+
+def generate_rag_response(query: str, system_key: str = "rag") -> str:
     """
     RAG 접근 방식을 사용하여 사용자 쿼리에 응답을 생성합니다.
 
     Args:
         query (str): 사용자 쿼리
-        vector_store (List[Dict], optional): 벡터 저장소. None이면 파일에서 로드
         system_key (str, optional): 시스템 프롬프트 키. 기본값은 "rag".
 
     Returns:
         str: 생성된 응답
     """
     try:
-        # 벡터 저장소가 제공되지 않은 경우 로드
-        if vector_store is None:
-            vector_store = load_vector_store()
-
-        # 벡터 저장소가 없는 경우 오류 반환
-        if not vector_store:
-            return "벡터 저장소를 로드할 수 없습니다. 관리자에게 문의하세요."
-
         # 1. 관련 청크 검색
-        similar_chunks = find_similar_chunks(query, vector_store)
+        similar_chunks = find_similar_chunks(query)
 
         # 검색 결과가 없는 경우
         if not similar_chunks:
@@ -111,13 +139,15 @@ def chat_interface():
     print("종료하려면 'quit', 'exit', '종료' 중 하나를 입력하세요.")
     print("-" * 50)
 
-    # 벡터 저장소 로드
-    vector_store = load_vector_store()
-    if not vector_store:
-        print("벡터 저장소를 로드할 수 없습니다. 프로그램을 종료합니다.")
-        return
+    # ChromaDB 확인
+    collection = get_or_create_collection()
+    count = collection.count()
 
-    print(f"성공적으로 {len(vector_store)}개의 청크가 로드되었습니다.")
+    if count > 0:
+        print(f"ChromaDB에서 {count}개의 청크가 로드되었습니다.")
+    else:
+        print("ChromaDB가 비어있습니다. 데이터를 추가해주세요.")
+        return
 
     while True:
         user_input = input("\n질문을 입력하세요: ")
@@ -131,5 +161,5 @@ def chat_interface():
             continue
 
         print("처리 중...")
-        response = generate_rag_response(user_input, vector_store)
+        response = generate_rag_response(user_input)
         print("\n답변:", response)
