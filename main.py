@@ -1,9 +1,16 @@
 import os
+import sys
+
+# 프로젝트 루트 디렉토리를 Python 경로에 추가
+project_root = os.path.abspath(os.path.dirname(__file__))
+sys.path.insert(0, project_root)
+
 import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.api.routes import router as api_router
 
@@ -14,8 +21,22 @@ app = FastAPI(
     version=settings.APP_VERSION,
 )
 
+# CORS 설정 추가
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "*"
+    ],  # 개발 환경에서는 모든 출처 허용, 프로덕션에서는 구체적인 도메인 지정
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # API 라우터 등록
 app.include_router(api_router)
+
+# 정적 파일 마운트
+app.mount("/client", StaticFiles(directory="client_web"), name="client")
 
 
 # 루트 경로에 대한 리다이렉션
@@ -66,6 +87,7 @@ async def root():
             <a href="/docs">API 문서 (Swagger UI)</a>
             <a href="/redoc">API 문서 (ReDoc)</a>
             <a href="/streamlit">Streamlit 웹 인터페이스</a>
+            <a href="/chat">ChatGPT 스타일 웹 인터페이스</a>
         </div>
         
         <p>자세한 정보는 API 문서를 참조하세요.</p>
@@ -74,11 +96,17 @@ async def root():
     """
 
 
+# ChatGPT 스타일 인터페이스 제공
+@app.get("/chat", response_class=HTMLResponse)
+async def chat_interface():
+    return RedirectResponse(url="/client/index.html")
+
+
 # Streamlit 앱 리다이렉션
 @app.get("/streamlit")
 async def streamlit_redirect():
     # 실제 배포 시에는 Streamlit 앱이 실행되는 URL로 변경
-    streamlit_url = "http://localhost:8501"
+    streamlit_url = "http://localhost:8503"
     return RedirectResponse(url=streamlit_url)
 
 
