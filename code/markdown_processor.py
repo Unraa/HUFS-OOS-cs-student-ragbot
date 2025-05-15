@@ -131,7 +131,7 @@ def chunk_by_heading(
 
 
 def process_markdown_documents(
-    directory_path: str, output_file: str = "combined_markdown.md"
+    directory_path: str, output_file: str = "docs/combined_markdown.md"
 ) -> Tuple[str, List[Dict[str, str]]]:
     """
     마크다운 문서를 처리하는 전체 파이프라인:
@@ -141,7 +141,7 @@ def process_markdown_documents(
 
     Args:
         directory_path (str): 노트북 파일들이 있는 디렉토리 경로
-        output_file (str, optional): 결합된 마크다운을 저장할 파일 경로. 기본값은 'combined_markdown.md'.
+        output_file (str, optional): 결합된 마크다운을 저장할 파일 경로. 기본값은 'docs/combined_markdown.md'.
 
     Returns:
         Tuple[str, List[Dict[str, str]]]: 결합된 마크다운 텍스트와 청킹된 내용 리스트
@@ -165,7 +165,8 @@ def process_markdown_documents(
 
 if __name__ == "__main__":
     directory_path = "study_docs"
-    combined_markdown, chunks = process_markdown_documents(directory_path)
+    output_file = "docs/combined_markdown.md"
+    combined_markdown, chunks = process_markdown_documents(directory_path, output_file)
 
     # 청크 내용 출력 (테스트용)
     for i, chunk in enumerate(chunks[:3]):  # 처음 3개만 출력

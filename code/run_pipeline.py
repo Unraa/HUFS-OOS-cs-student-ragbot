@@ -22,7 +22,7 @@ def setup_pipeline(docs_dir="study_docs", rebuild=False):
         rebuild (bool, optional): 벡터 저장소를 다시 구축할지 여부. 기본값은 False.
     """
     vector_store_path = "vector_store.json"
-    combined_md_path = "combined_markdown.md"
+    combined_md_path = "docs/combined_markdown.md"
 
     # 벡터 저장소가 이미 존재하고 rebuild 플래그가 False인 경우, 기존 벡터 저장소 사용
     if os.path.exists(vector_store_path) and not rebuild:
