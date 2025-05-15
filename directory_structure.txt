@@ -45,8 +45,8 @@ HUFS-OOS-cs-student-ragbot/
 │       └── rag.py                      # 벡터 스토어 기반 RAG 서비스
 │
 ├── data/                               # 데이터 파일
-│   ├── vector_store.json               # 레거시 벡터 저장소 (JSON)
 │   ├── chroma_db/                      # ChromaDB 벡터 데이터베이스
+│   ├── temp/                           # 임시 파일 디렉토리
 │   └── docs/                           # 문서 디렉토리
 │       ├── raw/                        # 원본 문서 디렉토리
 │       │   ├── 대학원+공지사항+취업정보+자료실+FAQ.md
