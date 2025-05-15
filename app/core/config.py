@@ -19,7 +19,7 @@ class Settings(BaseSettings):
 
     # 파일 경로
     VECTOR_STORE_PATH: str = "data/vector_store.json"
-    DOCS_DIR: str = "docs"
+    DOCS_DIR: str = "data/docs"
     PROMPTS_FILE: str = "app/core/prompts.yaml"
 
     # 모델 설정
