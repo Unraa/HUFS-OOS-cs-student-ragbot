@@ -200,7 +200,3 @@ with st.sidebar:
     if st.button("대화 초기화"):
         st.session_state.messages = []
         st.rerun()
-
-
-if __name__ == "__main__":
-    run_streamlit_app()
