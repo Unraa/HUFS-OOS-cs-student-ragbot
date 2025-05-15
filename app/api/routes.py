@@ -3,7 +3,8 @@ from typing import Dict, List, Optional
 from pydantic import BaseModel
 
 from app.services.embeddings import load_vector_store
-from app.services.rag import generate_rag_response
+from app.services.rag import generate_rag_response, load_prompts
+import logging
 
 # 라우터 정의
 router = APIRouter(
@@ -55,3 +56,34 @@ async def query_rag(
         raise HTTPException(
             status_code=500, detail=f"응답 생성 중 오류가 발생했습니다: {str(e)}"
         )
+
+
+@router.get("/health")
+async def health_check():
+    """상태 확인 엔드포인트"""
+    return {"status": "ok"}
+
+
+@router.post("/chat")
+async def chat(message: dict = Body(...)):
+    """
+    채팅 메시지를 처리하고 RAG 기반 응답을 반환하는 엔드포인트
+    """
+    try:
+        # 요청에서 메시지 추출
+        query = message.get("message", "")
+        if not query:
+            raise HTTPException(status_code=400, detail="메시지 내용이 없습니다")
+
+        # 벡터 저장소 로드
+        vector_store = load_vector_store()
+        if not vector_store:
+            raise HTTPException(status_code=500, detail="벡터 저장소 로드 실패")
+
+        # RAG 응답 생성
+        response = generate_rag_response(query, vector_store)
+
+        return {"response": response}
+    except Exception as e:
+        logging.error(f"채팅 처리 중 오류 발생: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"응답 생성 중 오류 발생: {str(e)}")
