@@ -1,0 +1,660 @@
+{
+  "top_1": {
+    "accuracy": 1.0,
+    "hits": 10,
+    "total": 10,
+    "query_results": [
+      {
+        "query": "컴퓨터공학과 졸업요건은 어떻게 되나요?",
+        "ground_truth_docs": [
+          "chunk_53",
+          "chunk_47",
+          "chunk_69"
+        ],
+        "retrieved_docs": [
+          "chunk_53"
+        ],
+        "hit": true
+      },
+      {
+        "query": "전공필수 과목은 무엇인가요?",
+        "ground_truth_docs": [
+          "chunk_64",
+          "chunk_45",
+          "chunk_60"
+        ],
+        "retrieved_docs": [
+          "chunk_64"
+        ],
+        "hit": true
+      },
+      {
+        "query": "컴공 학생회실은 어디에 있나요?",
+        "ground_truth_docs": [
+          "chunk_54",
+          "chunk_7",
+          "chunk_26"
+        ],
+        "retrieved_docs": [
+          "chunk_54"
+        ],
+        "hit": true
+      },
+      {
+        "query": "코딩 동아리는 어떤 것이 있나요?",
+        "ground_truth_docs": [
+          "chunk_26",
+          "chunk_54",
+          "chunk_34"
+        ],
+        "retrieved_docs": [
+          "chunk_26"
+        ],
+        "hit": true
+      },
+      {
+        "query": "교환학생 신청은 어떻게 하나요?",
+        "ground_truth_docs": [
+          "chunk_11",
+          "chunk_40",
+          "chunk_8"
+        ],
+        "retrieved_docs": [
+          "chunk_11"
+        ],
+        "hit": true
+      },
+      {
+        "query": "교수님 연구실 위치가 어디인가요?",
+        "ground_truth_docs": [
+          "chunk_46",
+          "chunk_11",
+          "chunk_16"
+        ],
+        "retrieved_docs": [
+          "chunk_46"
+        ],
+        "hit": true
+      },
+      {
+        "query": "장학금 신청은 어떻게 하나요?",
+        "ground_truth_docs": [
+          "chunk_40",
+          "chunk_73",
+          "chunk_35"
+        ],
+        "retrieved_docs": [
+          "chunk_40"
+        ],
+        "hit": true
+      },
+      {
+        "query": "수강신청 기간은 언제인가요?",
+        "ground_truth_docs": [
+          "chunk_58",
+          "chunk_36",
+          "chunk_6"
+        ],
+        "retrieved_docs": [
+          "chunk_58"
+        ],
+        "hit": true
+      },
+      {
+        "query": "컴퓨터공학과 학과장은 누구인가요?",
+        "ground_truth_docs": [
+          "chunk_0",
+          "chunk_26",
+          "chunk_54"
+        ],
+        "retrieved_docs": [
+          "chunk_0"
+        ],
+        "hit": true
+      },
+      {
+        "query": "졸업 프로젝트는 어떻게 진행되나요?",
+        "ground_truth_docs": [
+          "chunk_47",
+          "chunk_69",
+          "chunk_27"
+        ],
+        "retrieved_docs": [
+          "chunk_47"
+        ],
+        "hit": true
+      }
+    ]
+  },
+  "top_3": {
+    "accuracy": 1.0,
+    "hits": 10,
+    "total": 10,
+    "query_results": [
+      {
+        "query": "컴퓨터공학과 졸업요건은 어떻게 되나요?",
+        "ground_truth_docs": [
+          "chunk_53",
+          "chunk_47",
+          "chunk_69"
+        ],
+        "retrieved_docs": [
+          "chunk_53",
+          "chunk_47",
+          "chunk_69"
+        ],
+        "hit": true
+      },
+      {
+        "query": "전공필수 과목은 무엇인가요?",
+        "ground_truth_docs": [
+          "chunk_64",
+          "chunk_45",
+          "chunk_60"
+        ],
+        "retrieved_docs": [
+          "chunk_64",
+          "chunk_45",
+          "chunk_60"
+        ],
+        "hit": true
+      },
+      {
+        "query": "컴공 학생회실은 어디에 있나요?",
+        "ground_truth_docs": [
+          "chunk_54",
+          "chunk_7",
+          "chunk_26"
+        ],
+        "retrieved_docs": [
+          "chunk_54",
+          "chunk_7",
+          "chunk_26"
+        ],
+        "hit": true
+      },
+      {
+        "query": "코딩 동아리는 어떤 것이 있나요?",
+        "ground_truth_docs": [
+          "chunk_26",
+          "chunk_54",
+          "chunk_34"
+        ],
+        "retrieved_docs": [
+          "chunk_26",
+          "chunk_54",
+          "chunk_34"
+        ],
+        "hit": true
+      },
+      {
+        "query": "교환학생 신청은 어떻게 하나요?",
+        "ground_truth_docs": [
+          "chunk_11",
+          "chunk_40",
+          "chunk_8"
+        ],
+        "retrieved_docs": [
+          "chunk_11",
+          "chunk_40",
+          "chunk_8"
+        ],
+        "hit": true
+      },
+      {
+        "query": "교수님 연구실 위치가 어디인가요?",
+        "ground_truth_docs": [
+          "chunk_46",
+          "chunk_11",
+          "chunk_16"
+        ],
+        "retrieved_docs": [
+          "chunk_46",
+          "chunk_11",
+          "chunk_16"
+        ],
+        "hit": true
+      },
+      {
+        "query": "장학금 신청은 어떻게 하나요?",
+        "ground_truth_docs": [
+          "chunk_40",
+          "chunk_73",
+          "chunk_35"
+        ],
+        "retrieved_docs": [
+          "chunk_40",
+          "chunk_73",
+          "chunk_35"
+        ],
+        "hit": true
+      },
+      {
+        "query": "수강신청 기간은 언제인가요?",
+        "ground_truth_docs": [
+          "chunk_58",
+          "chunk_36",
+          "chunk_6"
+        ],
+        "retrieved_docs": [
+          "chunk_58",
+          "chunk_36",
+          "chunk_6"
+        ],
+        "hit": true
+      },
+      {
+        "query": "컴퓨터공학과 학과장은 누구인가요?",
+        "ground_truth_docs": [
+          "chunk_0",
+          "chunk_26",
+          "chunk_54"
+        ],
+        "retrieved_docs": [
+          "chunk_0",
+          "chunk_26",
+          "chunk_54"
+        ],
+        "hit": true
+      },
+      {
+        "query": "졸업 프로젝트는 어떻게 진행되나요?",
+        "ground_truth_docs": [
+          "chunk_47",
+          "chunk_69",
+          "chunk_27"
+        ],
+        "retrieved_docs": [
+          "chunk_47",
+          "chunk_69",
+          "chunk_27"
+        ],
+        "hit": true
+      }
+    ]
+  },
+  "top_5": {
+    "accuracy": 1.0,
+    "hits": 10,
+    "total": 10,
+    "query_results": [
+      {
+        "query": "컴퓨터공학과 졸업요건은 어떻게 되나요?",
+        "ground_truth_docs": [
+          "chunk_53",
+          "chunk_47",
+          "chunk_69"
+        ],
+        "retrieved_docs": [
+          "chunk_53",
+          "chunk_47",
+          "chunk_69",
+          "chunk_0",
+          "chunk_59"
+        ],
+        "hit": true
+      },
+      {
+        "query": "전공필수 과목은 무엇인가요?",
+        "ground_truth_docs": [
+          "chunk_64",
+          "chunk_45",
+          "chunk_60"
+        ],
+        "retrieved_docs": [
+          "chunk_64",
+          "chunk_45",
+          "chunk_60",
+          "chunk_61",
+          "chunk_58"
+        ],
+        "hit": true
+      },
+      {
+        "query": "컴공 학생회실은 어디에 있나요?",
+        "ground_truth_docs": [
+          "chunk_54",
+          "chunk_7",
+          "chunk_26"
+        ],
+        "retrieved_docs": [
+          "chunk_54",
+          "chunk_7",
+          "chunk_26",
+          "chunk_19",
+          "chunk_34"
+        ],
+        "hit": true
+      },
+      {
+        "query": "코딩 동아리는 어떤 것이 있나요?",
+        "ground_truth_docs": [
+          "chunk_26",
+          "chunk_54",
+          "chunk_34"
+        ],
+        "retrieved_docs": [
+          "chunk_26",
+          "chunk_54",
+          "chunk_34",
+          "chunk_19",
+          "chunk_49"
+        ],
+        "hit": true
+      },
+      {
+        "query": "교환학생 신청은 어떻게 하나요?",
+        "ground_truth_docs": [
+          "chunk_11",
+          "chunk_40",
+          "chunk_8"
+        ],
+        "retrieved_docs": [
+          "chunk_11",
+          "chunk_40",
+          "chunk_8",
+          "chunk_46",
+          "chunk_13"
+        ],
+        "hit": true
+      },
+      {
+        "query": "교수님 연구실 위치가 어디인가요?",
+        "ground_truth_docs": [
+          "chunk_46",
+          "chunk_11",
+          "chunk_16"
+        ],
+        "retrieved_docs": [
+          "chunk_46",
+          "chunk_11",
+          "chunk_16",
+          "chunk_55",
+          "chunk_13"
+        ],
+        "hit": true
+      },
+      {
+        "query": "장학금 신청은 어떻게 하나요?",
+        "ground_truth_docs": [
+          "chunk_40",
+          "chunk_73",
+          "chunk_35"
+        ],
+        "retrieved_docs": [
+          "chunk_40",
+          "chunk_73",
+          "chunk_35",
+          "chunk_36",
+          "chunk_8"
+        ],
+        "hit": true
+      },
+      {
+        "query": "수강신청 기간은 언제인가요?",
+        "ground_truth_docs": [
+          "chunk_58",
+          "chunk_36",
+          "chunk_6"
+        ],
+        "retrieved_docs": [
+          "chunk_58",
+          "chunk_36",
+          "chunk_6",
+          "chunk_9",
+          "chunk_32"
+        ],
+        "hit": true
+      },
+      {
+        "query": "컴퓨터공학과 학과장은 누구인가요?",
+        "ground_truth_docs": [
+          "chunk_0",
+          "chunk_26",
+          "chunk_54"
+        ],
+        "retrieved_docs": [
+          "chunk_0",
+          "chunk_26",
+          "chunk_54",
+          "chunk_43",
+          "chunk_48"
+        ],
+        "hit": true
+      },
+      {
+        "query": "졸업 프로젝트는 어떻게 진행되나요?",
+        "ground_truth_docs": [
+          "chunk_47",
+          "chunk_69",
+          "chunk_27"
+        ],
+        "retrieved_docs": [
+          "chunk_47",
+          "chunk_69",
+          "chunk_27",
+          "chunk_59",
+          "chunk_37"
+        ],
+        "hit": true
+      }
+    ]
+  },
+  "top_10": {
+    "accuracy": 1.0,
+    "hits": 10,
+    "total": 10,
+    "query_results": [
+      {
+        "query": "컴퓨터공학과 졸업요건은 어떻게 되나요?",
+        "ground_truth_docs": [
+          "chunk_53",
+          "chunk_47",
+          "chunk_69"
+        ],
+        "retrieved_docs": [
+          "chunk_53",
+          "chunk_47",
+          "chunk_69",
+          "chunk_0",
+          "chunk_59",
+          "chunk_72",
+          "chunk_27",
+          "chunk_37",
+          "chunk_43",
+          "chunk_50"
+        ],
+        "hit": true
+      },
+      {
+        "query": "전공필수 과목은 무엇인가요?",
+        "ground_truth_docs": [
+          "chunk_64",
+          "chunk_45",
+          "chunk_60"
+        ],
+        "retrieved_docs": [
+          "chunk_64",
+          "chunk_45",
+          "chunk_60",
+          "chunk_61",
+          "chunk_58",
+          "chunk_65",
+          "chunk_20",
+          "chunk_66",
+          "chunk_59",
+          "chunk_36"
+        ],
+        "hit": true
+      },
+      {
+        "query": "컴공 학생회실은 어디에 있나요?",
+        "ground_truth_docs": [
+          "chunk_54",
+          "chunk_7",
+          "chunk_26"
+        ],
+        "retrieved_docs": [
+          "chunk_54",
+          "chunk_7",
+          "chunk_26",
+          "chunk_19",
+          "chunk_34",
+          "chunk_75",
+          "chunk_11",
+          "chunk_29",
+          "chunk_0",
+          "chunk_15"
+        ],
+        "hit": true
+      },
+      {
+        "query": "코딩 동아리는 어떤 것이 있나요?",
+        "ground_truth_docs": [
+          "chunk_26",
+          "chunk_54",
+          "chunk_34"
+        ],
+        "retrieved_docs": [
+          "chunk_26",
+          "chunk_54",
+          "chunk_34",
+          "chunk_19",
+          "chunk_49",
+          "chunk_41",
+          "chunk_57",
+          "chunk_63",
+          "chunk_75",
+          "chunk_64"
+        ],
+        "hit": true
+      },
+      {
+        "query": "교환학생 신청은 어떻게 하나요?",
+        "ground_truth_docs": [
+          "chunk_11",
+          "chunk_40",
+          "chunk_8"
+        ],
+        "retrieved_docs": [
+          "chunk_11",
+          "chunk_40",
+          "chunk_8",
+          "chunk_46",
+          "chunk_13",
+          "chunk_7",
+          "chunk_6",
+          "chunk_38",
+          "chunk_62",
+          "chunk_36"
+        ],
+        "hit": true
+      },
+      {
+        "query": "교수님 연구실 위치가 어디인가요?",
+        "ground_truth_docs": [
+          "chunk_46",
+          "chunk_11",
+          "chunk_16"
+        ],
+        "retrieved_docs": [
+          "chunk_46",
+          "chunk_11",
+          "chunk_16",
+          "chunk_55",
+          "chunk_13",
+          "chunk_7",
+          "chunk_31",
+          "chunk_29",
+          "chunk_23",
+          "chunk_56"
+        ],
+        "hit": true
+      },
+      {
+        "query": "장학금 신청은 어떻게 하나요?",
+        "ground_truth_docs": [
+          "chunk_40",
+          "chunk_73",
+          "chunk_35"
+        ],
+        "retrieved_docs": [
+          "chunk_40",
+          "chunk_73",
+          "chunk_35",
+          "chunk_36",
+          "chunk_8",
+          "chunk_11",
+          "chunk_7",
+          "chunk_46",
+          "chunk_24",
+          "chunk_6"
+        ],
+        "hit": true
+      },
+      {
+        "query": "수강신청 기간은 언제인가요?",
+        "ground_truth_docs": [
+          "chunk_58",
+          "chunk_36",
+          "chunk_6"
+        ],
+        "retrieved_docs": [
+          "chunk_58",
+          "chunk_36",
+          "chunk_6",
+          "chunk_9",
+          "chunk_32",
+          "chunk_10",
+          "chunk_59",
+          "chunk_63",
+          "chunk_37",
+          "chunk_47"
+        ],
+        "hit": true
+      },
+      {
+        "query": "컴퓨터공학과 학과장은 누구인가요?",
+        "ground_truth_docs": [
+          "chunk_0",
+          "chunk_26",
+          "chunk_54"
+        ],
+        "retrieved_docs": [
+          "chunk_0",
+          "chunk_26",
+          "chunk_54",
+          "chunk_43",
+          "chunk_48",
+          "chunk_50",
+          "chunk_7",
+          "chunk_55",
+          "chunk_15",
+          "chunk_19"
+        ],
+        "hit": true
+      },
+      {
+        "query": "졸업 프로젝트는 어떻게 진행되나요?",
+        "ground_truth_docs": [
+          "chunk_47",
+          "chunk_69",
+          "chunk_27"
+        ],
+        "retrieved_docs": [
+          "chunk_47",
+          "chunk_69",
+          "chunk_27",
+          "chunk_59",
+          "chunk_37",
+          "chunk_74",
+          "chunk_52",
+          "chunk_71",
+          "chunk_68",
+          "chunk_53"
+        ],
+        "hit": true
+      }
+    ]
+  }
+}
