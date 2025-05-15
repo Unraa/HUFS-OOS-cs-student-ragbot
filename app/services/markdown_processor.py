@@ -148,7 +148,7 @@ def process_markdown_documents(
         Tuple[str, List[Dict[str, str]]]: 결합된 마크다운 텍스트와 청킹된 내용 리스트
     """
     if directory_path is None:
-        directory_path = "study_docs"
+        directory_path = os.path.join(settings.DOCS_DIR, "raw")
 
     if output_file is None:
         output_file = os.path.join(settings.DOCS_DIR, "combined_markdown.md")
