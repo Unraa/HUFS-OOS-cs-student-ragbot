@@ -1,0 +1,221 @@
+{
+  "queries": [
+    {
+      "query": "컴퓨터공학과 졸업요건은 어떻게 되나요?",
+      "ground_truth_docs": [
+        "chunk_53",
+        "chunk_47",
+        "chunk_69"
+      ],
+      "standard_docs": [
+        "chunk_53",
+        "chunk_47",
+        "chunk_69"
+      ],
+      "reranked_docs": [
+        "chunk_53",
+        "chunk_47",
+        "chunk_69"
+      ],
+      "standard_hit": true,
+      "reranked_hit": true,
+      "improved": false
+    },
+    {
+      "query": "전공필수 과목은 무엇인가요?",
+      "ground_truth_docs": [
+        "chunk_64",
+        "chunk_45",
+        "chunk_60"
+      ],
+      "standard_docs": [
+        "chunk_64",
+        "chunk_45",
+        "chunk_60"
+      ],
+      "reranked_docs": [
+        "chunk_64",
+        "chunk_45",
+        "chunk_60"
+      ],
+      "standard_hit": true,
+      "reranked_hit": true,
+      "improved": false
+    },
+    {
+      "query": "컴공 학생회실은 어디에 있나요?",
+      "ground_truth_docs": [
+        "chunk_54",
+        "chunk_7",
+        "chunk_26"
+      ],
+      "standard_docs": [
+        "chunk_54",
+        "chunk_7",
+        "chunk_26"
+      ],
+      "reranked_docs": [
+        "chunk_54",
+        "chunk_7",
+        "chunk_26"
+      ],
+      "standard_hit": true,
+      "reranked_hit": true,
+      "improved": false
+    },
+    {
+      "query": "코딩 동아리는 어떤 것이 있나요?",
+      "ground_truth_docs": [
+        "chunk_26",
+        "chunk_54",
+        "chunk_34"
+      ],
+      "standard_docs": [
+        "chunk_26",
+        "chunk_54",
+        "chunk_34"
+      ],
+      "reranked_docs": [
+        "chunk_26",
+        "chunk_54",
+        "chunk_34"
+      ],
+      "standard_hit": true,
+      "reranked_hit": true,
+      "improved": false
+    },
+    {
+      "query": "교환학생 신청은 어떻게 하나요?",
+      "ground_truth_docs": [
+        "chunk_11",
+        "chunk_40",
+        "chunk_8"
+      ],
+      "standard_docs": [
+        "chunk_11",
+        "chunk_40",
+        "chunk_8"
+      ],
+      "reranked_docs": [
+        "chunk_11",
+        "chunk_40",
+        "chunk_8"
+      ],
+      "standard_hit": true,
+      "reranked_hit": true,
+      "improved": false
+    },
+    {
+      "query": "교수님 연구실 위치가 어디인가요?",
+      "ground_truth_docs": [
+        "chunk_46",
+        "chunk_11",
+        "chunk_16"
+      ],
+      "standard_docs": [
+        "chunk_46",
+        "chunk_11",
+        "chunk_16"
+      ],
+      "reranked_docs": [
+        "chunk_46",
+        "chunk_11",
+        "chunk_16"
+      ],
+      "standard_hit": true,
+      "reranked_hit": true,
+      "improved": false
+    },
+    {
+      "query": "장학금 신청은 어떻게 하나요?",
+      "ground_truth_docs": [
+        "chunk_40",
+        "chunk_73",
+        "chunk_35"
+      ],
+      "standard_docs": [
+        "chunk_40",
+        "chunk_73",
+        "chunk_35"
+      ],
+      "reranked_docs": [
+        "chunk_40",
+        "chunk_73",
+        "chunk_35"
+      ],
+      "standard_hit": true,
+      "reranked_hit": true,
+      "improved": false
+    },
+    {
+      "query": "수강신청 기간은 언제인가요?",
+      "ground_truth_docs": [
+        "chunk_58",
+        "chunk_36",
+        "chunk_6"
+      ],
+      "standard_docs": [
+        "chunk_58",
+        "chunk_36",
+        "chunk_6"
+      ],
+      "reranked_docs": [
+        "chunk_58",
+        "chunk_36",
+        "chunk_6"
+      ],
+      "standard_hit": true,
+      "reranked_hit": true,
+      "improved": false
+    },
+    {
+      "query": "컴퓨터공학과 학과장은 누구인가요?",
+      "ground_truth_docs": [
+        "chunk_0",
+        "chunk_26",
+        "chunk_54"
+      ],
+      "standard_docs": [
+        "chunk_0",
+        "chunk_26",
+        "chunk_54"
+      ],
+      "reranked_docs": [
+        "chunk_0",
+        "chunk_26",
+        "chunk_54"
+      ],
+      "standard_hit": true,
+      "reranked_hit": true,
+      "improved": false
+    },
+    {
+      "query": "졸업 프로젝트는 어떻게 진행되나요?",
+      "ground_truth_docs": [
+        "chunk_47",
+        "chunk_69",
+        "chunk_27"
+      ],
+      "standard_docs": [
+        "chunk_47",
+        "chunk_69",
+        "chunk_27"
+      ],
+      "reranked_docs": [
+        "chunk_47",
+        "chunk_69",
+        "chunk_27"
+      ],
+      "standard_hit": true,
+      "reranked_hit": true,
+      "improved": false
+    }
+  ],
+  "standard_hits": 10,
+  "reranked_hits": 10,
+  "improvements": 0,
+  "total_queries": 10,
+  "standard_accuracy": 1.0,
+  "reranked_accuracy": 1.0,
+  "improvement_rate": 0.0
+}

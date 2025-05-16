@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-05-15 15:39:12",
+  "execution_time": 21.011007070541382,
+  "top_k_accuracy": {},
+  "response_quality": {},
+  "reranker_improvement": {},
+  "comparison": {
+    "query": "컴퓨터공학과 졸업요건은 어떻게 되나요?",
+    "standard_response_length": 426,
+    "improved_response_length": 508
+  }
+}
