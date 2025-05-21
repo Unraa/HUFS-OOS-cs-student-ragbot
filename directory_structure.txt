@@ -1,7 +1,9 @@
 HUFS-OOS-cs-student-ragbot/
 │
 ├── main.py                             # FastAPI 애플리케이션 진입점
-├── launch.sh                           # 서비스 실행 스크립트
+├── launch.sh                           # Linux/macOS 서비스 실행 스크립트
+├── launch.bat                          # Windows 서비스 실행 스크립트
+├── launch.ps1                          # PowerShell 서비스 실행 스크립트
 │
 ├── app/                                # 애플리케이션 코드
 │   ├── __init__.py                     # 패키지 초기화
@@ -43,8 +45,7 @@ HUFS-OOS-cs-student-ragbot/
 │       └── evaluation_summary.json     # 전체 평가 요약
 │
 ├── client_web/                         # 클라이언트 웹 코드
-│   ├── env/                            # 클라이언트 웹 가상환경
-│   └── index.html                      # 챗봇 웹 인터페이스
+│   └── env/                            # 클라이언트 웹 가상환경
 │
 ├── legacy/                             # 레거시 코드
 │   ├── baseline_test.py                # 기존 테스트 코드
@@ -78,6 +79,8 @@ HUFS-OOS-cs-student-ragbot/
 │   ├── 라운_개발진행을_위한_기본개념정리.ipynb
 │   ├── 태희_개발진행을_위한_기본개념정리.ipynb
 │   └── 현빈_개발진행을_위한_기본개념정리.ipynb
+│
+├── .github/                            # GitHub 관련 설정
 │
 ├── directory_structure.txt             # 디렉토리 구조 설명 파일
 ├── GUIDE.md                            # 사용자 가이드 문서
