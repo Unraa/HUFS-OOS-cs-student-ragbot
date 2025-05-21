@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한국외국어대학교 컴퓨터공학과 챗봇</title>
+    <title>한국외대 컴퓨터공학부 RAG 챗봇</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         * {
             box-sizing: border-box;
@@ -124,16 +126,39 @@
             33% { content: '..'; }
             66% { content: '...'; }
         }
+
+        .markdown h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .markdown h2 {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .markdown h3 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .markdown strong {
+            font-weight: bold;
+        }
+
+        .markdown ul {
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="chat-container">
         <div class="chat-header">
-            <h1>한국외국어대학교 컴퓨터공학과 챗봇</h1>
+            <h1>한국외국어대학교 컴퓨터공학부 챗봇</h1>
         </div>
         <div class="chat-messages" id="chat-messages">
             <div class="message bot-message">
-                안녕하세요! 한국외국어대학교 컴퓨터공학과에 대해 무엇이든 물어보세요.
+                안녕하세요! 한국외국어대학교 컴퓨터공학부에 대해 무엇이든 물어보세요.
             </div>
             <div class="typing-indicator" id="typing-indicator">입력 중</div>
         </div>
@@ -154,7 +179,14 @@
                 const messageDiv = document.createElement('div');
                 messageDiv.classList.add('message');
                 messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
-                messageDiv.textContent = text;
+                
+                // 마크다운 렌더링
+                if (isUser) {
+                    messageDiv.textContent = text;
+                } else {
+                    messageDiv.classList.add('markdown'); // 스타일 적용 위해 클래스 추가
+                    messageDiv.innerHTML = marked.parse(text); // 마크다운 -> HTML 변환
+                }
                 
                 // 타이핑 인디케이터 이전에 메시지 추가
                 chatMessages.insertBefore(messageDiv, typingIndicator);

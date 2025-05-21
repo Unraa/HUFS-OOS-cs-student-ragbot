@@ -10,7 +10,7 @@ NC='\033[0m' # No Color
 export PYTHONPATH=$PYTHONPATH:$(pwd)
 
 echo -e "${BLUE}=========================================${NC}"
-echo -e "${GREEN}한국외국어대학교 컴퓨터공학과 RAG 챗봇 시작${NC}"
+echo -e "${GREEN}한국외국어대학교 컴퓨터공학부 RAG 챗봇 시작${NC}"
 echo -e "${BLUE}=========================================${NC}"
 
 # ChromaDB 디렉토리 확인

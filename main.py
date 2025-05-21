@@ -57,7 +57,8 @@ async def root():
     <!DOCTYPE html>
     <html>
     <head>
-        <title>HUFS CS-Student RAG Chatbot</title>
+        <title>한국외대 컴퓨터공학부 RAG 챗봇</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -96,8 +97,8 @@ async def root():
         </style>
     </head>
     <body>
-        <h1>한국외국어대학교 컴퓨터공학과 RAG 챗봇</h1>
-        <p>이 서비스는 한국외국어대학교 컴퓨터공학과 관련 정보를 RAG(Retrieval-Augmented Generation) 기술로 제공합니다.</p>
+        <h1>한국외국어대학교 컴퓨터공학부 RAG 챗봇</h1>
+        <p>이 서비스는 한국외국어대학교 컴퓨터공학부 관련 정보를 RAG(Retrieval-Augmented Generation) 기술로 제공합니다.</p>
         
         <div class="endpoints">
             <h2>사용 가능한 엔드포인트:</h2>
