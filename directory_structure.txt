@@ -69,6 +69,7 @@ HUFS-OOS-cs-student-ragbot/
 │       ├── raw/                        # 원본 문서 디렉토리
 │       │   ├── 대학원+공지사항+취업정보+자료실+FAQ.md
 │       │   ├── 학부안내+구성원.md
+│       │   ├── 컴퓨터공학과_관련_과목_내용_정리.md 
 │       │   └── 라운_수업안내_학사안내_정리.markdown
 │       └── combined_markdown.md        # 결합된 마크다운 파일
 │
