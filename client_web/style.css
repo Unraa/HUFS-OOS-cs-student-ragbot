@@ -42,10 +42,14 @@
 
         .hufs-logo {
 <<<<<<< HEAD
+<<<<<<< HEAD
             height: 65px;
 =======
             height: 70px;
 >>>>>>> a55524b (chore: css 코드 파일 분리)
+=======
+            height: 65px;
+>>>>>>> 1e9600b (style: 헤더 높이 및 챗봇 메시지 최대 너비 개선)
             object-fit: contain;
         }
         
@@ -101,6 +105,7 @@
             width: fit-content;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             max-width: 90%;
 =======
             max-width: 100%;
@@ -108,6 +113,9 @@
 =======
             max-width: 80%;
 >>>>>>> d413804 (style: 로고와 헤더사이 간격 조정)
+=======
+            max-width: 90%;
+>>>>>>> 1e9600b (style: 헤더 높이 및 챗봇 메시지 최대 너비 개선)
             word-break: break-word;
             padding: 10px 15px;
         }
