@@ -25,7 +25,10 @@
         .chat-header {
             display: flex;
             align-items: center;
+<<<<<<< HEAD
             gap: 15px;
+=======
+>>>>>>> a55524b (chore: css 코드 파일 분리)
             padding: 20px;
             border-bottom: 1px solid #e0e0e0;
             background-color: #1f2c44;
@@ -34,7 +37,11 @@
         }
 
         .hufs-logo {
+<<<<<<< HEAD
             height: 65px;
+=======
+            height: 70px;
+>>>>>>> a55524b (chore: css 코드 파일 분리)
             object-fit: contain;
         }
         
@@ -88,7 +95,11 @@
 
             display: inline-block;
             width: fit-content;
+<<<<<<< HEAD
             max-width: 90%;
+=======
+            max-width: 100%;
+>>>>>>> a55524b (chore: css 코드 파일 분리)
             word-break: break-word;
             padding: 10px 15px;
         }
@@ -102,7 +113,10 @@
         #message-input {
             flex: 1;
             padding: 12px 20px;
+<<<<<<< HEAD
             padding-left: 10px;
+=======
+>>>>>>> a55524b (chore: css 코드 파일 분리)
             border: 1px solid #ddd;
             border-radius: 25px;
             font-size: 16px;
@@ -171,7 +185,11 @@
             font-weight: bold;
         }
 
+<<<<<<< HEAD
         .markdown ul, .markdown ol {
+=======
+        .markdown ul {
+>>>>>>> a55524b (chore: css 코드 파일 분리)
             padding-left: 20px;
         }
 
