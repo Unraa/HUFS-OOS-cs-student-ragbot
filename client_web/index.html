@@ -67,7 +67,6 @@
         
         .user-message {
             background-color: #e9e0d7;
-            align-self: flex-end;
             border-bottom-right-radius: 5px;
 
             display: inline-block;
@@ -80,7 +79,6 @@
         
         .bot-message {
             background-color: #f1f1f1;
-            margin-right: auto;
             border-bottom-left-radius: 5px;
 
             display: inline-block;
@@ -170,6 +168,8 @@
         .markdown ul {
             padding-left: 20px;
         }
+
+        
     </style>
 </head>
 <body>
@@ -198,6 +198,11 @@
             const typingIndicator = document.getElementById('typing-indicator');
             
             function addMessage(text, isUser) {
+
+                const wrapper = document.createElement('div');
+                wrapper.classList.add('message-wrapper');
+                wrapper.classList.add(isUser ? 'user' : 'bot');
+
                 const messageDiv = document.createElement('div');
                 messageDiv.classList.add('message');
                 messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
@@ -211,7 +216,8 @@
                 }
                 
                 // 타이핑 인디케이터 이전에 메시지 추가
-                chatMessages.insertBefore(messageDiv, typingIndicator);
+                wrapper.appendChild(messageDiv);
+                chatMessages.insertBefore(wrapper, typingIndicator);
                 
                 // 스크롤을 항상 아래로 유지
                 chatMessages.scrollTop = chatMessages.scrollHeight;
