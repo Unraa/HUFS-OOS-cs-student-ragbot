@@ -26,9 +26,13 @@
             display: flex;
             align-items: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
             gap: 15px;
 =======
 >>>>>>> a55524b (chore: css 코드 파일 분리)
+=======
+            gap: 15px;
+>>>>>>> d413804 (style: 로고와 헤더사이 간격 조정)
             padding: 20px;
             border-bottom: 1px solid #e0e0e0;
             background-color: #1f2c44;
@@ -96,10 +100,14 @@
             display: inline-block;
             width: fit-content;
 <<<<<<< HEAD
+<<<<<<< HEAD
             max-width: 90%;
 =======
             max-width: 100%;
 >>>>>>> a55524b (chore: css 코드 파일 분리)
+=======
+            max-width: 80%;
+>>>>>>> d413804 (style: 로고와 헤더사이 간격 조정)
             word-break: break-word;
             padding: 10px 15px;
         }
@@ -114,9 +122,13 @@
             flex: 1;
             padding: 12px 20px;
 <<<<<<< HEAD
+<<<<<<< HEAD
             padding-left: 10px;
 =======
 >>>>>>> a55524b (chore: css 코드 파일 분리)
+=======
+            padding-left: 10px;
+>>>>>>> d413804 (style: 로고와 헤더사이 간격 조정)
             border: 1px solid #ddd;
             border-radius: 25px;
             font-size: 16px;
