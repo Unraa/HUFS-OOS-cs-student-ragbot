@@ -71,7 +71,6 @@
         
         .user-message {
             background-color: #e9e0d7;
-            align-self: flex-end;
             border-bottom-right-radius: 5px;
 
             display: inline-block;
@@ -84,7 +83,6 @@
         
         .bot-message {
             background-color: #f1f1f1;
-            margin-right: auto;
             border-bottom-left-radius: 5px;
 
             display: inline-block;
@@ -174,6 +172,8 @@
         .markdown ul {
             padding-left: 20px;
         }
+
+        
     </style>
 >>>>>>> c8a6d39 (style: 챗봇 메시지 박스 텍스트 길이에 맞게 조정)
 </head>
@@ -197,5 +197,103 @@
     
     <script src="script.js"></script>
 
+<<<<<<< HEAD
+=======
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const messageInput = document.getElementById('message-input');
+            const sendButton = document.getElementById('send-button');
+            const chatMessages = document.getElementById('chat-messages');
+            const typingIndicator = document.getElementById('typing-indicator');
+            
+            function addMessage(text, isUser) {
+
+                const wrapper = document.createElement('div');
+                wrapper.classList.add('message-wrapper');
+                wrapper.classList.add(isUser ? 'user' : 'bot');
+
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message');
+                messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
+                
+                // 마크다운 렌더링
+                if (isUser) {
+                    messageDiv.textContent = text;
+                } else {
+                    messageDiv.classList.add('markdown'); // 스타일 적용 위해 클래스 추가
+                    messageDiv.innerHTML = marked.parse(text); // 마크다운 -> HTML 변환
+                }
+                
+                // 타이핑 인디케이터 이전에 메시지 추가
+                wrapper.appendChild(messageDiv);
+                chatMessages.insertBefore(wrapper, typingIndicator);
+                
+                // 스크롤을 항상 아래로 유지
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            function showTypingIndicator() {
+                typingIndicator.style.display = 'block';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            function hideTypingIndicator() {
+                typingIndicator.style.display = 'none';
+            }
+            
+            async function sendMessage() {
+                const message = messageInput.value.trim();
+                if (!message) return;
+                
+                // 사용자 메시지 추가
+                addMessage(message, true);
+                messageInput.value = '';
+                
+                // 타이핑 표시
+                showTypingIndicator();
+                
+                try {
+                    const response = await fetch('http://localhost:8000/api/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ message })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error('API 응답 오류');
+                    }
+                    
+                    const data = await response.json();
+                    hideTypingIndicator();
+                    
+                    // 챗봇 응답을 조금 지연시켜 자연스러운 효과 추가
+                    setTimeout(() => {
+                        addMessage(data.response, false);
+                    }, 500);
+                    
+                } catch (error) {
+                    console.error('오류 발생:', error);
+                    hideTypingIndicator();
+                    
+                    setTimeout(() => {
+                        addMessage('죄송합니다. 오류가 발생했습니다. 나중에 다시 시도해주세요.', false);
+                    }, 500);
+                }
+            }
+            
+            // 전송 버튼 클릭 이벤트
+            sendButton.addEventListener('click', sendMessage);
+            
+            // 엔터 키 이벤트
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+>>>>>>> c3b55d0 (style: 텍스트 박스 js 수정정)
 </body>
 </html> 
