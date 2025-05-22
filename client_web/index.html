@@ -32,11 +32,18 @@
         }
         
         .chat-header {
+            display: flex;
+            align-items: center;
             padding: 20px;
             border-bottom: 1px solid #e0e0e0;
-            background-color: #1a73e8;
+            background-color: #1f2c44;
             color: white;
             border-radius: 10px 10px 0 0;
+        }
+
+        .hufs-logo {
+            height: 70px;
+            object-fit: contain;
         }
         
         .chat-messages {
@@ -59,7 +66,7 @@
         }
         
         .user-message {
-            background-color: #e3f2fd;
+            background-color: #e9e0d7;
             margin-left: auto;
             border-bottom-right-radius: 5px;
         }
@@ -86,7 +93,7 @@
         }
         
         #send-button {
-            background-color: #1a73e8;
+            background-color: #374862;
             color: white;
             border: none;
             border-radius: 25px;
@@ -98,7 +105,8 @@
         }
         
         #send-button:hover {
-            background-color: #1558b7;
+            background-color: #374862;
+            color: #d2b282
         }
         
         .typing-indicator {
@@ -154,6 +162,7 @@
 <body>
     <div class="chat-container">
         <div class="chat-header">
+            <img src= "hufs_cse_logo.png" alt ="hufs-logo" class="hufs-logo">
             <h1>한국외국어대학교 컴퓨터공학부 챗봇</h1>
         </div>
         <div class="chat-messages" id="chat-messages">
