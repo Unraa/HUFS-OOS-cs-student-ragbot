@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
->>>>>>> d5efc3c (chore: js 코드 파일 분리)
-=======
->>>>>>> bc5a56123a1d01b52d2a03a447b817325c1b4f46
->>>>>>> 5240e18c0220cd3d7b9cb9c12fcf10852e845c23
 document.addEventListener('DOMContentLoaded', function() {
     const messageInput = document.getElementById('message-input');
     const sendButton = document.getElementById('send-button');
