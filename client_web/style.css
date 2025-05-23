@@ -1,0 +1,221 @@
+ * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .chat-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 40px);
+        }
+        
+        .chat-header {
+            display: flex;
+            align-items: center;
+<<<<<<< HEAD
+<<<<<<< HEAD
+            gap: 15px;
+=======
+>>>>>>> a55524b (chore: css 코드 파일 분리)
+=======
+            gap: 15px;
+>>>>>>> d413804 (style: 로고와 헤더사이 간격 조정)
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            background-color: #1f2c44;
+            color: white;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .hufs-logo {
+<<<<<<< HEAD
+<<<<<<< HEAD
+            height: 65px;
+=======
+            height: 70px;
+>>>>>>> a55524b (chore: css 코드 파일 분리)
+=======
+            height: 65px;
+>>>>>>> 1e9600b (style: 헤더 높이 및 챗봇 메시지 최대 너비 개선)
+            object-fit: contain;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 70%;
+            animation: fadeIn 0.3s;
+        }
+        
+        .message-wrapper {
+         display: flex;
+          margin-bottom: 10px;
+        }
+
+        .message-wrapper.user {
+         justify-content: flex-end; 
+        }
+
+        .message-wrapper.bot {
+        justify-content: flex-start;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .user-message {
+            background-color: #e9e0d7;
+            border-bottom-right-radius: 5px;
+
+            display: inline-block;
+            width: fit-content;
+            max-width: 80%;
+            word-break: break-word;
+            white-space: pre-wrap;
+            padding: 10px 15px;
+        }
+        
+        .bot-message {
+            background-color: #f1f1f1;
+            border-bottom-left-radius: 5px;
+
+            display: inline-block;
+            width: fit-content;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            max-width: 90%;
+=======
+            max-width: 100%;
+>>>>>>> a55524b (chore: css 코드 파일 분리)
+=======
+            max-width: 80%;
+>>>>>>> d413804 (style: 로고와 헤더사이 간격 조정)
+=======
+            max-width: 90%;
+>>>>>>> 1e9600b (style: 헤더 높이 및 챗봇 메시지 최대 너비 개선)
+            word-break: break-word;
+            padding: 10px 15px;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        #message-input {
+            flex: 1;
+            padding: 12px 20px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+            padding-left: 10px;
+=======
+>>>>>>> a55524b (chore: css 코드 파일 분리)
+=======
+            padding-left: 10px;
+>>>>>>> d413804 (style: 로고와 헤더사이 간격 조정)
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        #send-button {
+            background-color: #374862;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 0 25px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        
+        #send-button:hover {
+            background-color: #374862;
+            color: #d2b282
+        }
+        
+        .typing-indicator {
+            padding: 10px 15px;
+            background-color: #f1f1f1;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            display: none;
+            width: fit-content;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        .typing-indicator::after {
+            content: '...';
+            animation: ellipsis 1.5s infinite;
+        }
+        
+        @keyframes ellipsis {
+            0% { content: '.'; }
+            33% { content: '..'; }
+            66% { content: '...'; }
+        }
+
+        .markdown h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .markdown h2 {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .markdown h3 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .markdown strong {
+            font-weight: bold;
+        }
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+        .markdown ul, .markdown ol {
+=======
+        .markdown ul {
+>>>>>>> a55524b (chore: css 코드 파일 분리)
+=======
+        .markdown ul, .markdown ol {
+>>>>>>> 834a7ed (fix: 마크다운 리스트의 좌측 여백 문제 수정정)
+            padding-left: 20px;
+        }
+
+
+    

@@ -6,6 +6,11 @@
     <title>한국외대 컴퓨터공학부 RAG 챗봇</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <link rel="stylesheet" href="style.css">
+    
+=======
     <style>
         * {
             box-sizing: border-box;
@@ -60,6 +65,19 @@
             animation: fadeIn 0.3s;
         }
         
+        .message-wrapper {
+         display: flex;
+          margin-bottom: 10px;
+        }
+
+        .message-wrapper.user {
+         justify-content: flex-end; 
+        }
+
+        .message-wrapper.bot {
+        justify-content: flex-start;
+        }
+        
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -67,14 +85,25 @@
         
         .user-message {
             background-color: #e9e0d7;
-            margin-left: auto;
             border-bottom-right-radius: 5px;
+
+            display: inline-block;
+            width: fit-content;
+            max-width: 80%;
+            word-break: break-word;
+            white-space: pre-wrap;
+            padding: 10px 15px;
         }
         
         .bot-message {
             background-color: #f1f1f1;
-            margin-right: auto;
             border-bottom-left-radius: 5px;
+
+            display: inline-block;
+            width: fit-content;
+            max-width: 100%;
+            word-break: break-word;
+            padding: 10px 15px;
         }
         
         .chat-input {
@@ -157,7 +186,14 @@
         .markdown ul {
             padding-left: 20px;
         }
+
+
     </style>
+>>>>>>> c8a6d39 (style: 챗봇 메시지 박스 텍스트 길이에 맞게 조정)
+=======
+    <link rel="stylesheet" href="style.css">
+    
+>>>>>>> a55524b (chore: css 코드 파일 분리)
 </head>
 <body>
     <div class="chat-container">
@@ -176,7 +212,12 @@
             <button id="send-button">전송</button>
         </div>
     </div>
+    
+    <script src="script.js"></script>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const messageInput = document.getElementById('message-input');
@@ -185,6 +226,11 @@
             const typingIndicator = document.getElementById('typing-indicator');
             
             function addMessage(text, isUser) {
+
+                const wrapper = document.createElement('div');
+                wrapper.classList.add('message-wrapper');
+                wrapper.classList.add(isUser ? 'user' : 'bot');
+
                 const messageDiv = document.createElement('div');
                 messageDiv.classList.add('message');
                 messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
@@ -198,7 +244,8 @@
                 }
                 
                 // 타이핑 인디케이터 이전에 메시지 추가
-                chatMessages.insertBefore(messageDiv, typingIndicator);
+                wrapper.appendChild(messageDiv);
+                chatMessages.insertBefore(wrapper, typingIndicator);
                 
                 // 스크롤을 항상 아래로 유지
                 chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -266,5 +313,8 @@
             });
         });
     </script>
+>>>>>>> c3b55d0 (style: 텍스트 박스 js 수정정)
+=======
+>>>>>>> d5efc3c (chore: js 코드 파일 분리)
 </body>
 </html> 
