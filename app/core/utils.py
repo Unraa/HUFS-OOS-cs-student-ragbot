@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
+from app.core.config import settings
 
 # .env 파일에서 환경 변수 로드 (한 번만 실행)
 load_dotenv()
@@ -18,5 +19,5 @@ def get_openai_client():
     """
     global client
     if client is None:
-        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        client = OpenAI(api_key=settings.OPENAI_API_KEY)
     return client
