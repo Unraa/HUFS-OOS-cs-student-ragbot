@@ -19,5 +19,5 @@ def get_openai_client():
     """
     global client
     if client is None:
-        client = OpenAI(api_key=settings.OPENAI_API_KEY)
+        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
     return client
