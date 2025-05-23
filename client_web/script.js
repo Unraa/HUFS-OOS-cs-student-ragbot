@@ -43,8 +43,12 @@ document.addEventListener('DOMContentLoaded', function() {
         messageInput.value = '';
         showTypingIndicator();
 
+        const BASE_URL = location.hostname === "localhost"
+        ? "http://localhost:8000"
+        : "https://hufscomchatbot.duckdns.org";
+
         try {
-            const response = await fetch('http://localhost:8000/api/chat', {
+            const response = await fetch(`${BASE_URL}/api/chat`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
