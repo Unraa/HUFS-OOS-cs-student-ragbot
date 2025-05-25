@@ -75,6 +75,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    const settingsBtn = document.getElementById('settings-button');
+    const settingsPanel = document.getElementById('settings-panel');
+    settingsBtn.addEventListener('click', () => {
+    settingsPanel.classList.toggle('hidden');
+    });
+    
     sendButton.addEventListener('click', sendMessage);
     messageInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
