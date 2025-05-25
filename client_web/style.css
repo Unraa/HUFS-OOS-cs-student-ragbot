@@ -175,5 +175,13 @@
             padding-left: 20px;
         }
 
+        .settings-btn {
+            margin-left: auto;
+            background-color: transparent;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: white;
+        }
 
     
