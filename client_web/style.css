@@ -227,4 +227,14 @@
             color: #333;
         }
 
+        .font-size-setting {
+            margin-top: 40px; /* ✖ 버튼과 간격 */
+            font-size: 14px;
+            color: #333;
+        }
+
+        #font-size-slider {
+            width: 100%;
+            margin-top: 8px;
+        }
     
