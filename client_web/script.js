@@ -80,7 +80,13 @@ document.addEventListener('DOMContentLoaded', function() {
     settingsBtn.addEventListener('click', () => {
     settingsPanel.classList.toggle('hidden');
     });
-    
+
+    const closeBtn = document.getElementById('close-settings');
+
+    closeBtn.addEventListener('click', () => {
+        settingsPanel.classList.add('hidden');
+    });
+
     sendButton.addEventListener('click', sendMessage);
     messageInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
