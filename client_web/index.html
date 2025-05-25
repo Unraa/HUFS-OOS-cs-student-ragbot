@@ -20,6 +20,14 @@
 
                 <div id="settings-panel" class="settings-panel hidden">
                   <button id="close-settings" class="close-btn">✖</button>
+                  <div class="darkmode-setting">
+                    <span>다크모드</span>
+                    <label class="switch">
+                        <input type="checkbox" id="dark-mode-toggle">
+                        <span class="slider"></span>
+                    </label>
+                 </div>
+
                   <div class="font-size-setting">
                     <label for="font-size-slider">글자 크기</label>
                     <input type="range" id="font-size-slider" min="12" max="24" value="16">
@@ -27,6 +35,7 @@
                 </div>
             </div>
         </div>
+
         <div class="chat-messages" id="chat-messages">
             <div class="message bot-message">
                 안녕하세요! 한국외국어대학교 컴퓨터공학부에 대해 무엇이든 물어보세요.
