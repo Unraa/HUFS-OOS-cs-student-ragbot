@@ -175,21 +175,21 @@
             padding-left: 20px;
         }
 
-        .markdown table {
+        /* 마크다운 코드블록 표 스타일 */
+        .markdown pre code, .markdown code {
+            font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'Liberation Mono', monospace;
+            font-size: 15px;
+            white-space: pre;       /* 줄바꿈 유지 */
+            word-break: normal;     /* 박스 넘어가지 않게 */
+            overflow-x: auto;       /* 넘치면 스크롤 */
+            background: #d2b282;
+            border-radius: 7px;
+            padding: 14px 18px;
             display: block;
-            overflow-x: auto;
             max-width: 100%;
-            white-space: nowrap;
+            box-sizing: border-box;
         }
 
-        .bot-message .markdown {
-            max-width: 100%;
-        }
-
-        .bot-message {
-            max-width: 90%; 
-            overflow-x: auto; /* 표가 박스를 넘어서면 가로 스크롤 생성 */
-        }
 
 
 
