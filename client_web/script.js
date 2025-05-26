@@ -93,6 +93,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const size = e.target.value + 'px';
         chatMessages.style.fontSize = size;
     });
+
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+    darkModeToggle.addEventListener('change', () => {
+        document.body.classList.toggle('darkmode');
+    });
+
+
     sendButton.addEventListener('click', sendMessage);
     messageInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
