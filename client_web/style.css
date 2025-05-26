@@ -175,5 +175,23 @@
             padding-left: 20px;
         }
 
+        .markdown table {
+            display: block;
+            overflow-x: auto;
+            max-width: 100%;
+            white-space: nowrap;
+        }
+
+        .bot-message .markdown {
+            max-width: 100%;
+        }
+
+        .bot-message {
+            max-width: 90%; 
+            overflow-x: auto; /* 표가 박스를 넘어서면 가로 스크롤 생성 */
+        }
+
+
+
 
     
