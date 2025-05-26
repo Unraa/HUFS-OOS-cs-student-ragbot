@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
->>>>>>> d5efc3c (chore: js 코드 파일 분리)
-=======
->>>>>>> bc5a56123a1d01b52d2a03a447b817325c1b4f46
->>>>>>> 5240e18c0220cd3d7b9cb9c12fcf10852e845c23
 document.addEventListener('DOMContentLoaded', function() {
     const messageInput = document.getElementById('message-input');
     const sendButton = document.getElementById('send-button');
@@ -51,8 +43,12 @@ document.addEventListener('DOMContentLoaded', function() {
         messageInput.value = '';
         showTypingIndicator();
 
+        const BASE_URL = location.hostname === "localhost"
+        ? "http://localhost:8000"
+        : "https://hufscomchatbot.duckdns.org";
+
         try {
-            const response = await fetch('http://localhost:8000/api/chat', {
+            const response = await fetch(`${BASE_URL}/api/chat`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

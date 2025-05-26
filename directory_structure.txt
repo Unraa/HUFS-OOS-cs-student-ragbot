@@ -4,6 +4,7 @@ HUFS-OOS-cs-student-ragbot/
 ├── launch.sh                           # Linux/macOS 서비스 실행 스크립트
 ├── launch.bat                          # Windows 서비스 실행 스크립트
 ├── launch.ps1                          # PowerShell 서비스 실행 스크립트
+├── Dockerfile                          # Dockerfile
 │
 ├── app/                                # 애플리케이션 코드
 │   ├── __init__.py                     # 패키지 초기화
