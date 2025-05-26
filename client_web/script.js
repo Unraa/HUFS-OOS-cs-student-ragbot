@@ -96,8 +96,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const darkModeToggle = document.getElementById('dark-mode-toggle');
 
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('darkmode');
+        darkModeToggle.checked = true;  // 스위치도 켜진 상태로
+    }
+
+
     darkModeToggle.addEventListener('change', () => {
         document.body.classList.toggle('darkmode');
+        const theme = document.body.classList.contains('darkmode') ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
     });
 
 
