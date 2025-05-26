@@ -26,6 +26,30 @@ document.addEventListener('DOMContentLoaded', function() {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
+    function addBotTypingEffect(text) {
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('message-wrapper', 'bot');
+
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', 'bot-message', 'markdown');
+        wrapper.appendChild(messageDiv);
+
+        chatMessages.insertBefore(wrapper, typingIndicator);
+
+        let idx = 0;
+        function typing() {
+            if (idx <= text.length) {
+                messageDiv.innerHTML = marked.parse(text.slice(0, idx) + '▌');
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                idx++;
+                setTimeout(typing, 12); // 속도 조절
+            } else {
+                messageDiv.innerHTML = marked.parse(text);
+            }
+        }
+        typing();
+    }
+
     function showTypingIndicator() {
         typingIndicator.style.display = 'block';
         chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -61,9 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = await response.json();
             hideTypingIndicator();
 
-            setTimeout(() => {
-                addMessage(data.response, false);
-            }, 500);
+            addBotTypingEffect(data.response);
 
         } catch (error) {
             console.error('오류 발생:', error);
