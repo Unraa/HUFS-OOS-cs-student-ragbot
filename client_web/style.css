@@ -182,7 +182,7 @@
             white-space: pre;       /* 줄바꿈 유지 */
             word-break: normal;     /* 박스 넘어가지 않게 */
             overflow-x: auto;       /* 넘치면 스크롤 */
-            background: #d2b282;
+            background-color: #E8E3DC;
             border-radius: 7px;
             padding: 14px 18px;
             display: block;
@@ -190,6 +190,18 @@
             box-sizing: border-box;
         }
 
+        .markdown table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        .markdown th, .markdown td {
+            border: 1px solid #ccc;
+            padding: 8px 6px;
+            text-align: center;
+            word-break: break-all;
+        }
 
 
 
