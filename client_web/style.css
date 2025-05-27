@@ -46,6 +46,7 @@
             max-width: 60px;
             object-fit: contain;
             flex-shrink: 0;
+            cursor: pointer;
         }
         
         .chat-messages {
