@@ -56,4 +56,14 @@ body.darkmode .typing-indicator {
   50% { opacity: 1; }
 }
 
+body.darkmode #send-button {
+  background-color: #2e2e2e;
+  color: #f1f1f1;
+  border: none;
+}
+
+body.darkmode #send-button:hover {
+  background-color: #2e2e2e;
+  color: white;
+}
 
