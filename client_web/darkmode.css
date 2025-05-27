@@ -7,6 +7,7 @@ body.darkmode {
 /* 챗박스 배경 */
 body.darkmode .chat-container {
   background-color: #1e1e1e;
+  box-shadow: 0 0 8px rgba(0,0,0,0.6);
 }
 
 /* 사용자 메시지 */
