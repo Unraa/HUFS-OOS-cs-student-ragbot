@@ -31,11 +31,21 @@
             background-color: #1f2c44;
             color: white;
             border-radius: 10px 10px 0 0;
+            flex-wrap: nowrap;
+            min-width: 0;
+        }
+
+        .chat-header h1 {
+            font-size: clamp(16px, 4vw, 24px); 
+            white-space: nowrap;               
+            text-overflow: ellipsis;
         }
 
         .hufs-logo {
-            height: 65px;
+            height: 40px;
+            max-width: 60px;
             object-fit: contain;
+            flex-shrink: 0;
         }
         
         .chat-messages {
@@ -245,6 +255,7 @@
             align-items: center;
             margin-top: 20px;
             font-size: 14px;
-            color: #333;  /* ✅ 또는 black 으로 명시 */
+            color: #333;  
         }
+    
     
