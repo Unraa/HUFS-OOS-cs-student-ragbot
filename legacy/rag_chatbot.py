@@ -1,11 +1,9 @@
 import os
+from typing import Dict, List
+
 import yaml
-from typing import List, Dict
+from embeddings_generator import find_similar_chunks, load_vector_store
 from utils import get_openai_client
-from embeddings_generator import (
-    load_vector_store,
-    find_similar_chunks,
-)
 
 
 def load_prompts(yaml_file="code/prompts.yaml"):

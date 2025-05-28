@@ -1,8 +1,10 @@
+import glob
 import os
 import re
-import glob
+from typing import Dict, List, Tuple
+
 import nbformat
-from typing import List, Dict, Tuple
+
 from app.core.config import settings
 
 

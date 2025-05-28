@@ -4,11 +4,11 @@ Reranker 모듈
 이 모듈은 검색된 문서를 재정렬하는 Reranker 기능을 제공합니다.
 """
 
-from typing import List, Dict, Any
 import json
+import logging
 import os
 import sys
-import logging
+from typing import Any, Dict, List
 
 # 프로젝트 루트를 추가하여 app 모듈에 접근할 수 있도록 합니다
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -39,7 +39,8 @@ def rerank_documents(
     """
     try:
         import torch
-        from transformers import AutoModelForSequenceClassification, AutoTokenizer
+        from transformers import (AutoModelForSequenceClassification,
+                                  AutoTokenizer)
     except ImportError:
         logger.error("필요한 패키지가 설치되지 않았습니다. 다음 명령어로 설치해주세요:")
         logger.error("pip install torch transformers")

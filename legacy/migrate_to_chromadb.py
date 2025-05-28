@@ -3,20 +3,18 @@
 기존 JSON 벡터 저장소에서 ChromaDB로 데이터를 마이그레이션하는 스크립트
 """
 
+import json
 import os
 import sys
-import json
 
 # 프로젝트 루트 디렉토리를 Python 경로에 추가
 project_root = os.path.abspath(os.path.dirname(__file__))
 sys.path.insert(0, project_root)
 
 from app.core.config import settings
-from app.services.embeddings import (
-    get_or_create_collection,
-    migrate_json_to_chromadb,
-    load_vector_store,
-)
+from app.services.embeddings import (get_or_create_collection,
+                                     load_vector_store,
+                                     migrate_json_to_chromadb)
 
 
 def main():

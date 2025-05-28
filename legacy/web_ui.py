@@ -1,9 +1,10 @@
-import streamlit as st
 import os
 import time
-from utils import get_openai_client
+
+import streamlit as st
 from embeddings_generator import load_vector_store
 from rag_chatbot import generate_rag_response, load_prompts
+from utils import get_openai_client
 
 # 페이지 설정
 st.set_page_config(
