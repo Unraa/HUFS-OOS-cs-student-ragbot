@@ -87,8 +87,6 @@ jobs:
             docker run -d \
               --name hufs-cs-ragbot \
               -p 8000:8000 \
-              -v /app/data:/app/data \
-              -v /app/study_docs:/app/study_docs \
               -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
               --restart unless-stopped \
               hyunbinkim00/hufs-cs-ragbot-api:latest
