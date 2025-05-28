@@ -198,6 +198,41 @@
             padding-left: 20px;
         }
 
+        .markdown pre code, .markdown code {
+            font-family: 'D2Coding', 'Fira Mono', 'Consolas', monospace;
+            font-size: 15px;
+            white-space: pre;       /* 줄바꿈 유지 */
+            word-break: normal;     /* 박스 넘어가지 않게 */
+            overflow-x: auto;       /* 넘치면 스크롤 */
+            background-color: #E8E3DC;
+            border-radius: 7px;
+            padding: 14px 18px;
+            display: block;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .table-scroll {
+            width: 100%;
+            overflow-x: auto;      /* 필요할 때만 스크롤 */
+        }
+
+        .table-scroll table {
+            min-width: 100%;      /* or 표 열 수에 맞게 조정, 너무 작으면 효과 없음 */
+            width: max-content;    /* 표의 실제 폭만큼 */
+            table-layout: auto;
+            border-collapse: collapse;
+        }
+
+        .table-scroll th,
+        .table-scroll td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+            white-space: pre-line; /* 줄바꿈 허용 */
+            word-break: break-word;
+        }
+
         .settings-btn {
             margin-left: auto;
             background-color: transparent;
@@ -221,6 +256,7 @@
             width: 200px;
             gap: 8px;
             height: auto;
+
 
             background-color: white;
             border: 3px solid #374862;
