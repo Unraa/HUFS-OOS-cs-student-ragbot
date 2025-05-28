@@ -1,0 +1,40 @@
+# conda create -n HUFS-OOS-cs-student-ragbot python=3.10
+# conda activate HUFS-OOS-cs-student-ragbot
+# pip install -r requirements.txt
+
+# 핵심 종속성
+openai
+python-dotenv
+PyYAML
+numpy
+nbformat
+streamlit
+pandas
+pillow
+
+# FastAPI 관련 패키지
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+jinja2
+
+# 벡터 데이터베이스
+chromadb
+faiss-cpu
+
+# Langchain 관련 패키지
+langchain
+langchain-openai
+langchain-community
+langchain-chroma
+
+# 추가 유틸리티
+python-multipart
+httpx
+
+# 평가 모듈 관련 패키지
+rouge
+nltk
+transformers
+torch 
