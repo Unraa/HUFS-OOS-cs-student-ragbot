@@ -32,7 +32,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
           dockerfile: Dockerfile
-          image: hufs-cs-ragbot/api
+          image: hyunbinkim00/hufs-cs-ragbot-api
           tags: latest
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
