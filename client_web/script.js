@@ -75,6 +75,40 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    const settingsBtn = document.getElementById('settings-button');
+    const settingsPanel = document.getElementById('settings-panel');
+    settingsBtn.addEventListener('click', () => {
+    settingsPanel.classList.toggle('hidden');
+    });
+
+    const closeBtn = document.getElementById('close-settings');
+
+    closeBtn.addEventListener('click', () => {
+        settingsPanel.classList.add('hidden');
+    });
+
+    const fontSizeSlider = document.getElementById('font-size-slider');
+
+    fontSizeSlider.addEventListener('input', (e) => {
+        const size = e.target.value + 'px';
+        chatMessages.style.fontSize = size;
+    });
+
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('darkmode');
+        darkModeToggle.checked = true;  // 스위치도 켜진 상태로
+    }
+
+
+    darkModeToggle.addEventListener('change', () => {
+        document.body.classList.toggle('darkmode');
+        const theme = document.body.classList.contains('darkmode') ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+    });
+
+
     sendButton.addEventListener('click', sendMessage);
     messageInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
