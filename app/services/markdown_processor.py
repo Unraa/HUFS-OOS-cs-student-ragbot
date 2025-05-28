@@ -64,9 +64,9 @@ def combine_markdown_documents(directory_path: str) -> str:
 
         # 각 문서 사이에 구분자 추가
         if combined_markdown:
-            combined_markdown += f"\n\n# 문서: {os.path.basename(notebook_file)}\n\n"
+            combined_markdown += f"\n\n## 문서: {os.path.basename(notebook_file)}\n\n"
         else:
-            combined_markdown += f"# 문서: {os.path.basename(notebook_file)}\n\n"
+            combined_markdown += f"## 문서: {os.path.basename(notebook_file)}\n\n"
 
         combined_markdown += markdown_content
 
@@ -77,9 +77,9 @@ def combine_markdown_documents(directory_path: str) -> str:
 
         # 각 문서 사이에 구분자 추가
         if combined_markdown:
-            combined_markdown += f"\n\n# 문서: {os.path.basename(markdown_file)}\n\n"
+            combined_markdown += f"\n\n## 문서: {os.path.basename(markdown_file)}\n\n"
         else:
-            combined_markdown += f"# 문서: {os.path.basename(markdown_file)}\n\n"
+            combined_markdown += f"## 문서: {os.path.basename(markdown_file)}\n\n"
 
         combined_markdown += markdown_content
 

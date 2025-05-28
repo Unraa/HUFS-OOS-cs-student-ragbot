@@ -76,9 +76,14 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             docker pull hyunbinkim00/hufs-cs-ragbot-api:latest
+
+            docker ps -q --filter "publish=8000" | xargs -r docker stop
             docker stop hufs-cs-ragbot || true
             docker rm hufs-cs-ragbot || true
 
+            mkdir -p /app/data /app/study_docs
+
+            # 컨테이너 재실행
             docker run -d \
               --name hufs-cs-ragbot \
               -p 8000:8000 \
@@ -88,4 +93,5 @@ jobs:
               --restart unless-stopped \
               hyunbinkim00/hufs-cs-ragbot-api:latest
 
+            # 미사용 이미지 정리
             docker system prune -af --volumes
