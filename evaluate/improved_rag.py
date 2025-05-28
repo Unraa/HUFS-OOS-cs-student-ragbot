@@ -4,20 +4,20 @@
 이 모듈은 Reranker를 적용한 개선된 RAG 시스템을 구현합니다.
 """
 
-from typing import List, Dict, Any
 import json
+import logging
 import os
 import sys
-import logging
+from typing import Any, Dict, List
 
 # 프로젝트 루트를 추가하여 app 모듈에 접근할 수 있도록 합니다
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, project_root)
 
-from app.services.embeddings import find_similar_chunks
-from app.services.rag import format_context_from_chunks, load_prompts
 from app.core.config import settings
 from app.core.utils import get_openai_client
+from app.services.embeddings import find_similar_chunks
+from app.services.rag import format_context_from_chunks, load_prompts
 from evaluate.reranker import rerank_documents
 
 # 로깅 설정

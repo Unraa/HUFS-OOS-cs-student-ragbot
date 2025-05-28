@@ -2,14 +2,12 @@
 마크다운 문서 처리, 임베딩 생성, RAG 챗봇 실행을 하나의 파이프라인으로 연결하는 스크립트
 """
 
-import os
 import argparse
+import os
+
+from embeddings_generator import (generate_embeddings_for_chunks,
+                                  load_vector_store, save_vector_store)
 from markdown_processor import process_markdown_documents
-from embeddings_generator import (
-    generate_embeddings_for_chunks,
-    save_vector_store,
-    load_vector_store,
-)
 from rag_chatbot import chat_interface
 
 

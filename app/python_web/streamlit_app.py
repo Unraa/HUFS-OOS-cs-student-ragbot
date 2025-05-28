@@ -5,8 +5,10 @@ import sys
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
 sys.path.insert(0, project_root)
 
-import streamlit as st
 import time
+
+import streamlit as st
+
 from app.core.utils import get_openai_client
 from app.services.embeddings import load_vector_store
 from app.services.rag import generate_rag_response, load_prompts

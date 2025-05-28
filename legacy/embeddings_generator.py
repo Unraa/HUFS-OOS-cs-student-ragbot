@@ -1,10 +1,11 @@
-import os
-from typing import List, Dict
-import numpy as np
 import json
+import os
+from typing import Dict, List
+
+import numpy as np
 from dotenv import load_dotenv
-from openai import OpenAI
 from markdown_processor import process_markdown_documents
+from openai import OpenAI
 from utils import get_openai_client
 
 # .env 파일에서 환경 변수 로드

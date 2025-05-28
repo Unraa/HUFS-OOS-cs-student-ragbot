@@ -1,14 +1,11 @@
-from fastapi import APIRouter, Depends, HTTPException, Body
+import logging
 from typing import Dict, List, Optional
+
+from fastapi import APIRouter, Body, Depends, HTTPException
 from pydantic import BaseModel
 
-from app.services.rag import (
-    generate_rag_response,
-    load_prompts,
-    update_vector_store,
-    get_vector_store,
-)
-import logging
+from app.services.rag import (generate_rag_response, get_vector_store,
+                              load_prompts, update_vector_store)
 
 # 라우터 정의
 router = APIRouter(

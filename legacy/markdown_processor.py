@@ -1,8 +1,9 @@
+import glob
 import os
 import re
-import glob
+from typing import Dict, List, Tuple
+
 import nbformat
-from typing import List, Dict, Tuple
 
 
 def extract_markdown_from_notebook(notebook_path: str) -> str:

@@ -1,7 +1,8 @@
 import os
-from openai import OpenAI
-from dotenv import load_dotenv
+
 import yaml
+from dotenv import load_dotenv
+from openai import OpenAI
 
 # .env 파일에서 환경 변수 로드
 load_dotenv()
