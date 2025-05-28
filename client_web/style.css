@@ -176,7 +176,7 @@
         }
 
         .markdown pre code, .markdown code {
-            font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'Liberation Mono', monospace;
+            font-family: 'D2Coding', 'Fira Mono', 'Consolas', monospace;
             font-size: 15px;
             white-space: pre;       /* 줄바꿈 유지 */
             word-break: normal;     /* 박스 넘어가지 않게 */
@@ -188,6 +188,28 @@
             max-width: 100%;
             box-sizing: border-box;
         }
+        
+        .table-scroll {
+            width: 100%;
+            overflow-x: auto;      /* 필요할 때만 스크롤 */
+        }
+
+        .table-scroll table {
+            min-width: 100%;      /* or 표 열 수에 맞게 조정, 너무 작으면 효과 없음 */
+            width: max-content;    /* 표의 실제 폭만큼 */
+            table-layout: auto;
+            border-collapse: collapse;
+        }
+
+        .table-scroll th,
+        .table-scroll td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+            white-space: pre-line; /* 줄바꿈 허용 */
+            word-break: break-word;
+        }
+
 
 
 
