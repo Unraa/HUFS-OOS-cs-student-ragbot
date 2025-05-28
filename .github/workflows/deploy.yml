@@ -10,29 +10,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Decode SSH key
+    - name: Decode PEM key
       run: |
         echo "${{ secrets.EC2_KEY }}" | base64 -d > hufschatbot.pem
         chmod 400 hufschatbot.pem
 
-    - name: Copy project files to EC2
+    - name: Connect and deploy to EC2
       run: |
-        scp -o StrictHostKeyChecking=no -i hufschatbot.pem -r . ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/home/${{ secrets.EC2_USER }}/ragbot
+        ssh -o StrictHostKeyChecking=no -i hufschatbot.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          # 기존 디렉토리 제거
+          rm -rf ~/ragbot
+          mkdir ~/ragbot
+        EOF
 
-    - name: SSH into EC2 and deploy
+        # 전체 프로젝트 복사
+        scp -i hufschatbot.pem -o StrictHostKeyChecking=no -r . ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/home/${{ secrets.EC2_USER }}/ragbot
+
+    - name: Run Docker Compose on EC2
       run: |
         ssh -o StrictHostKeyChecking=no -i hufschatbot.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
           cd ~/ragbot
-          
-          # .env 덮어쓰기
           echo "${{ secrets.ENV_FILE }}" > .env
-
-          # Docker 컨테이너 정리 및 재시작
-          docker stop ragbot || true
-          docker rm ragbot || true
-          docker build -t ragbot .
-          docker run -d --name ragbot -p 8000:8000 --env-file .env ragbot
+          docker-compose down || true
+          docker-compose up --build -d
         EOF
