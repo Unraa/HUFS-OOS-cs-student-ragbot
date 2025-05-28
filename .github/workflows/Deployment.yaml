@@ -52,7 +52,7 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             # 이전 컨테이너 정리
-            docker pull hufs-cs-ragbot/api:latest
+            docker pull hyunbinkim00/hufs-cs-ragbot-api:latest
             docker stop hufs-cs-ragbot || true
             docker rm hufs-cs-ragbot || true
 
@@ -64,7 +64,7 @@ jobs:
               -v /app/study_docs:/app/study_docs \
               -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
               --restart unless-stopped \
-              hufs-cs-ragbot/api:latest
+              hyunbinkim00/hufs-cs-ragbot-api:latest
 
             # 미사용 이미지 정리
             docker system prune -af --volumes
