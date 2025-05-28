@@ -93,9 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
         messageInput.value = '';
         showTypingIndicator();
 
-        const BASE_URL = location.hostname === "localhost"
-        ? "http://localhost:8000"
-        : "https://hufscomchatbot.duckdns.org";
+        const BASE_URL = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+            ? "http://localhost:8000"
+            : "https://hufscomchatbot.duckdns.org";
 
         try {
             const response = await fetch(`${BASE_URL}/api/chat`, {
