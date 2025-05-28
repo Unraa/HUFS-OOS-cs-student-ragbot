@@ -3,6 +3,8 @@ name: HUFS CS RAG Bot CI/CD
 on:
   pull_request:
     branches: [main]
+  push:
+    branches: [main]
 
 jobs:
   # CI: 코드 검증 및 Docker 이미지 빌드
@@ -54,12 +56,13 @@ jobs:
             docker stop hufs-cs-ragbot || true
             docker rm hufs-cs-ragbot || true
 
-            # 새 컨테이너 실행 (볼륨 마운트 포함)
+            # 새 컨테이너 실행 (볼륨 마운트 및 환경 변수 포함)
             docker run -d \
               --name hufs-cs-ragbot \
               -p 8000:8000 \
               -v /app/data:/app/data \
               -v /app/study_docs:/app/study_docs \
+              -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
               --restart unless-stopped \
               hufs-cs-ragbot/api:latest
 
