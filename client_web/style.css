@@ -175,7 +175,6 @@
             padding-left: 20px;
         }
 
-        /* 마크다운 코드블록 표 스타일 */
         .markdown pre code, .markdown code {
             font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'Liberation Mono', monospace;
             font-size: 15px;
@@ -188,19 +187,6 @@
             display: block;
             max-width: 100%;
             box-sizing: border-box;
-        }
-
-        .markdown table {
-            width: 100%;
-            table-layout: fixed;
-            border-collapse: collapse;
-        }
-
-        .markdown th, .markdown td {
-            border: 1px solid #ccc;
-            padding: 8px 6px;
-            text-align: center;
-            word-break: break-all;
         }
 
 
