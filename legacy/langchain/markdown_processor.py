@@ -1,12 +1,14 @@
 import os
-from typing import List, Dict, Tuple
-from langchain_community.document_loaders import DirectoryLoader, TextLoader
+from typing import Dict, List, Tuple
+
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 
 try:
     from langchain.schema import Document
 except ImportError:
     from langchain_core.documents import Document
+
 from app.core.config import settings
 
 

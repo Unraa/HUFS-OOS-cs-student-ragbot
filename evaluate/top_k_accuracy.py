@@ -4,10 +4,10 @@ Top-k 문서 정확도를 평가하는 모듈
 이 모듈은 RAG 시스템이 검색한 문서의 Top-k 정확도를 평가하는 함수를 제공합니다.
 """
 
-from typing import List, Dict, Any
 import json
 import os
 import sys
+from typing import Any, Dict, List
 
 # 프로젝트 루트를 추가하여 app 모듈에 접근할 수 있도록 합니다
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))

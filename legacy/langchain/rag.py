@@ -1,6 +1,7 @@
 import os
+from typing import Dict, List
+
 import yaml
-from typing import List, Dict
 from langchain.chains import RetrievalQA
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
@@ -12,6 +13,7 @@ try:
     from langchain.schema import Document
 except ImportError:
     from langchain_core.documents import Document
+
 from app.core.config import settings
 
 

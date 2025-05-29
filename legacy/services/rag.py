@@ -1,13 +1,13 @@
 import os
+from typing import Dict, List
+
 import yaml
-from typing import List, Dict
-from app.core.utils import get_openai_client
+
 from app.core.config import settings
-from app.services.embeddings import (
-    load_vector_store,
-    find_similar_chunks,
-    get_or_create_collection,
-)
+from app.core.utils import get_openai_client
+from app.services.embeddings import (find_similar_chunks,
+                                     get_or_create_collection,
+                                     load_vector_store)
 
 
 def load_prompts(yaml_file=None):
@@ -61,8 +61,8 @@ def update_vector_store(documents_dir=None, output_file=None):
     Returns:
         bool: 업데이트 성공 여부
     """
-    from app.services.markdown_processor import process_markdown_documents
     from app.services.embeddings import generate_embeddings_for_chunks
+    from app.services.markdown_processor import process_markdown_documents
 
     if documents_dir is None:
         documents_dir = settings.DOCS_DIR

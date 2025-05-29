@@ -1,11 +1,13 @@
-import os
-from typing import List, Dict
-import numpy as np
 import json
+import os
+from typing import Dict, List
+
 import chromadb
+import numpy as np
 from chromadb.utils.embedding_functions import OpenAIEmbeddingFunction
-from app.core.utils import get_openai_client
+
 from app.core.config import settings
+from app.core.utils import get_openai_client
 from app.services.markdown_processor import process_markdown_documents
 
 

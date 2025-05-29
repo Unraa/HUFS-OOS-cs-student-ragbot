@@ -7,13 +7,14 @@
 import json
 import os
 import sys
-from typing import Dict, Any, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 # 프로젝트 루트를 추가하여 app 모듈에 접근할 수 있도록 합니다
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, project_root)
 
-from app.services.embeddings import find_similar_chunks, get_or_create_collection
+from app.services.embeddings import (find_similar_chunks,
+                                     get_or_create_collection)
 
 
 def create_test_dataset() -> Dict[str, Any]:

@@ -4,10 +4,11 @@ GPT 응답 품질을 평가하는 모듈
 이 모듈은 RAG 시스템이 생성한 응답의 품질을 ROUGE, BLEU 등의 지표로 평가하는 함수를 제공합니다.
 """
 
-from typing import List, Dict, Any
 import json
 import os
 import sys
+from typing import Any, Dict, List
+
 import numpy as np
 
 # 프로젝트 루트를 추가하여 app 모듈에 접근할 수 있도록 합니다
@@ -31,9 +32,9 @@ def evaluate_gpt_response_quality(
         Dict: 품질 평가 지표를 포함한 결과 딕셔너리
     """
     try:
-        from rouge import Rouge
-        from nltk.translate.bleu_score import sentence_bleu
         import nltk
+        from nltk.translate.bleu_score import sentence_bleu
+        from rouge import Rouge
 
         nltk.download("punkt", quiet=True)  # NLTK 데이터 다운로드
     except ImportError:
