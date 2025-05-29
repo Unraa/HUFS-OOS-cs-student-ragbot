@@ -67,3 +67,14 @@ body.darkmode #send-button:hover {
   color: white;
 }
 
+body.darkmode .chat-container .bot-message a,
+body.darkmode .chat-container .markdown a {
+    color: #ffd700;
+    text-decoration: underline;
+}
+
+body.darkmode .chat-container .bot-message a:hover,
+body.darkmode .chat-container .markdown a:hover {
+    color: #ffcc00;
+}
+
