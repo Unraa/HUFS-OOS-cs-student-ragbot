@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // 표(코드블록)는 한 번에 출력
                 const tableHTML = marked.parse(frag.content);
                 html += `<div class="table-scroll">${tableHTML}</div>`;
+                messageDiv.innerHTML = html;
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             } else {
                 // 일반 텍스트(문단/목록)는 한글자씩 출력
