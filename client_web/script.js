@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 fragments.push({ type: "text", content: text.slice(lastIdx, match.index) });
             }
             // 코드블록(표) 자체
-            fragments.push({ type: "table", content: "```markdown" + match[1] + "```" });
+            fragments.push({ type: "table", content: match[1]});
             lastIdx = codeblockRegex.lastIndex;
         }
         if (lastIdx < text.length) {
@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let frag of fragments) {
             if (frag.type === "table") {
                 // 표(코드블록)는 한 번에 출력
-                html += marked.parse(frag.content);
-                messageDiv.innerHTML = html;
+                const tableHTML = marked.parse(frag.content);
+                html += `<div class="table-scroll">${tableHTML}</div>`;
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             } else {
                 // 일반 텍스트(문단/목록)는 한글자씩 출력
