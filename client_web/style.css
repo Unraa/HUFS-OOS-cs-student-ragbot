@@ -5,7 +5,8 @@
         }
         
         body {
-            font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            font-family: 'Apple SD Gothic Neo', 
+            'Noto Sans KR', sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f9f9f9;
@@ -204,7 +205,6 @@
             white-space: pre;       /* 줄바꿈 유지 */
             word-break: normal;     /* 박스 넘어가지 않게 */
             overflow-x: auto;       /* 넘치면 스크롤 */
-            background-color: #E8E3DC;
             border-radius: 7px;
             padding: 14px 18px;
             display: block;
@@ -306,5 +306,4 @@
             font-size: 14px;
             color: #333;  
         }
-    
     
